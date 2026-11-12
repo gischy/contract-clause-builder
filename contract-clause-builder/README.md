@@ -17,6 +17,9 @@ as a batch, the skill:
 4. Runs ten consistency checks before producing output.
 5. Refuses to improvise and stops if the input combination isn't covered by
    the approved rule set — the correct result in that case, not a failure.
+   (On a buyer-side draft against a non-professional seller, the correct
+   result is a single short clause, LIM-NONE, confirming liability is not
+   limited — not a full section, but not silence either.)
 6. Optionally exports the result as a Word (.docx) or PDF file.
 
 ## Files

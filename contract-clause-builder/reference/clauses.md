@@ -27,6 +27,27 @@ Square brackets mark values inserted from the rule table.
 
 ---
 
+## LIM-NONE — No limitation of liability
+
+**DRAFT** — new, not yet reviewed by the firm. Position 1 only, and the
+*only* clause Position 1 produces.
+Requires: DEF-REPS, DEF-APPLICABLE-LAW
+
+> The Parties confirm that the Seller's liability to the Buyer under or in
+> connection with this Agreement, including in respect of the inaccuracy of
+> the Seller's Representations, is not limited, capped or subject to any
+> time bar or threshold under this Agreement, and that the general
+> provisions of Applicable Law shall apply without modification.
+
+This exists only because a buyer-side draft against a non-professional
+seller still benefits from saying so expressly, rather than the agreement
+silently omitting a limitation section. It changes nothing about the firm's
+underlying position: the Seller's liability remains genuinely unlimited
+either way. Do not add a cap, claim period, threshold or any other
+limitation clause alongside it — see consistency rule 11.
+
+---
+
 ## LIM-SCOPE — Scope
 
 **FROM AGREEMENT** (cl. 10.1). All positions except 4.

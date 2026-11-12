@@ -61,8 +61,8 @@ The inputs, in the order to ask them:
     fund, a strategic acquirer, an institutional investor) or an individual/
     private buyer? This is independent of the Position table and does not
     change which position applies; it only decides whether
-    LIM-BUYER-SOPHISTICATED is included. Not asked on position 1 drafts, since
-    no section is produced at all.
+    LIM-BUYER-SOPHISTICATED is included. Not asked on position 1 drafts: they
+    produce only the confirmatory LIM-NONE clause, not a limitation regime.
 
 Do not ask about thresholds on a buyer-side draft, the third party claim notice
 period, the conditional claim period, or which of the mitigation, lost profit
@@ -71,8 +71,9 @@ and are set by `reference/rules.md`.
 
 Ask for the disclosure date for every position that produces a limitation
 section. It is a required deal input: do not apply a default or leave the
-`[DISCLOSURE DATE]` placeholder unresolved. Position 1 produces no section, so
-do not ask for it once that position is established.
+`[DISCLOSURE DATE]` placeholder unresolved. Position 1 produces only LIM-NONE,
+not a limitation section, so do not ask for it once that position is
+established.
 
 For a seller-side standard position, ask for other title assets before choosing
 the claim-period variant. If there are none, select the no-other-title-assets
@@ -93,9 +94,10 @@ from `reference/rules.md` and flag it in the output as a default.
 
 Establish the position from the "Position" table in `reference/rules.md`.
 
-**Position 1 produces no limitation section.** Say so, give the reason — the
-firm does not limit a non-professional seller's liability on a buyer-side
-draft — and stop. That is the correct output, not a failure.
+**Position 1 produces only LIM-NONE, not a limitation section.** Select LIM-NONE
+and nothing else. Give the reason — the firm does not limit a non-professional
+seller's liability on a buyer-side draft — and stop before asking any of the
+other inputs. That is the correct output, not a failure.
 
 Otherwise start from the "Always included" list, then take what the selection
 table gives for the position (including the applicable claim-period variant),
@@ -109,7 +111,13 @@ approved clause set, and stop. Do not produce a partial draft.
 
 ## Step 3 — Assemble
 
-Output as a numbered section, with these sub-headings, in this order:
+**Position 1 is an exception to the rest of this step.** Output LIM-NONE
+alone, under its own single heading (e.g. "10. No Limitation of Seller's
+Liability") — not the numbered sub-heading structure below, which is for a
+full limitation section only.
+
+For positions 2-4, output as a numbered section, with these sub-headings, in
+this order:
 
 1. Scope
 2. Periods for bringing claims — claim periods, third party claim notice,
@@ -171,5 +179,5 @@ If PDF export fails because LibreOffice isn't available in this
 environment, say so plainly and offer the Word file instead — do not retry
 silently or fall back to pasting the text as a workaround.
 
-Position 1 produces no section, so there is nothing to export; skip this
-step entirely for position 1 drafts.
+Position 1's output is short (a single LIM-NONE clause), but still offer
+the export — it is a real clause the user may want in Word or PDF form.

@@ -3,6 +3,29 @@
 All notable changes to this project (paper, clause library, and the
 `contract-clause-builder` skill) are recorded here, newest first.
 
+## 2026-11-12 (still later)
+
+### Position 1 now produces a confirmatory clause (LIM-NONE)
+
+- Position 1 (buyer side, non-professional seller) previously produced no
+  output at all. User feedback from a live run: this read as the skill
+  "stopping" rather than completing. Added `LIM-NONE` (DRAFT, new — not yet
+  firm-reviewed): a single clause confirming the Seller's liability is not
+  limited. The firm's substantive position is unchanged; this only makes it
+  visible in the document instead of omitting Section 10 silently.
+  Consistency rule 11 ensures LIM-NONE is the *only* clause Position 1
+  produces — explicitly considered and rejected: actually capping
+  non-professional sellers' liability, which would reverse a real,
+  documented firm position (see the alternative recorded in this entry's
+  discussion, not implemented).
+- Updated `SKILL.md` Steps 1-5 and `reference/rules.md` accordingly.
+- Rebuilt `contract-clause-builder.zip`.
+- **Paper + validity evaluation now inconsistent with this change** — paper
+  §5.1 and Table 3/4 still describe Position 1 as producing "no limitation
+  section at all," and T01/T02/T12/E11 in the validity evaluation currently
+  score "no section produced" as the passing answer. Both need updating
+  before submission; not yet done.
+
 ## 2026-11-12 (even later)
 
 ### Wizard-flow fix and export feature

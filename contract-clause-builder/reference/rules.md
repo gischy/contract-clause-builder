@@ -8,13 +8,16 @@ The side alone does not decide. Four positions:
 
 | # | Position | Trigger | Result |
 |---|---|---|---|
-| 1 | Buyer, non-professional seller | acting for buyer; seller is an individual or otherwise not a professional seller | **no limitation section at all** |
+| 1 | Buyer, non-professional seller | acting for buyer; seller is an individual or otherwise not a professional seller | **LIM-NONE only — a single clause confirming liability is not limited** |
 | 2 | Buyer, professional seller | acting for buyer; seller is a fund, strategic or institutional | 100% of price, flat period |
 | 3 | Seller, standard | acting for seller; full warranty package | capped, tiered periods, thresholds |
 | 4 | Seller, narrow | acting for seller; title warranties only | liability for all other matters excluded |
 
-Position 1 produces nothing. Say so plainly, give the reason, and stop — that
-is the correct output, not a failure.
+Position 1 does not produce a full limitation section. It produces exactly
+one clause, LIM-NONE, confirming that the Seller's liability is not limited
+— no cap, no shortened claim periods, no thresholds, none of the other
+limitation clauses. Select only LIM-NONE, give the reason, and stop. That is
+the correct output, not a failure.
 
 ## Selection
 
@@ -47,7 +50,8 @@ acting. This is independent of the Position table above and does not change
 which Position applies; it only decides whether LIM-BUYER-SOPHISTICATED is
 included.
 
-Not asked on Position 1 drafts, since no section is produced at all.
+Not asked on Position 1 drafts: they produce only the confirmatory LIM-NONE
+clause, not a limitation regime that LIM-BUYER-SOPHISTICATED could attach to.
 
 | Buyer type | Result |
 |---|---|
@@ -124,6 +128,7 @@ to exactly one. Position 4 has no indemnity schedule.
 | LIM-MITIG-B | LIM-MITIG |
 | DISCL-DATAROOM | DEF-REPS, DEF-DATA-ROOM |
 | LIM-BUYER-SOPHISTICATED | DEF-REPS |
+| LIM-NONE | DEF-REPS, DEF-APPLICABLE-LAW |
 
 ## Consistency rules
 
@@ -154,6 +159,9 @@ to exactly one. Position 4 has no indemnity schedule.
     the Buyer is professional/institutional. Never include it for an
     individual/private Buyer, and never omit it for a professional/
     institutional Buyer.
+11. **Position 1 is LIM-NONE alone.** Position 1's output is exactly one
+    clause, LIM-NONE. No cap, period, threshold, disclosure, mitigation,
+    buyer-type or other limitation clause may appear alongside it.
 
 ## No match
 
