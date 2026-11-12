@@ -59,7 +59,8 @@ Requires: DEF-REPS, DEF-CLAIM, DEF-SALE-SHARES
 
 ## LIM-TIME — Claim periods, three tiers
 
-**FROM AGREEMENT** (cl. 10.2). Positions 3 and 4.
+**FROM AGREEMENT** (cl. 10.2). Position 3 where title claims extend to other
+assets as well as the Sale Shares.
 Requires: DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE
 
 **Note:** cites specific paragraph numbers of the indemnity schedule. If the
@@ -86,6 +87,52 @@ schedule changes, the clause is silently wrong. Checked by consistency rule 1.
 > the occurrence of the circumstances giving rise to compensation of losses
 > listed in paragraph [OTHER PARAGRAPHS] of Schedule [N] — after the expiry of
 > [OTHER PERIOD] from the Closing Date.
+
+---
+
+## LIM-TIME-SHARES — Claim periods, three tiers; Sale Shares only
+
+**FROM AGREEMENT, ADAPTED** — LIM-TIME with the other-title-assets limb omitted.
+Position 3 where there are no other title assets.
+Requires: DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE
+
+> Upon expiry of the periods specified in this clause [N] below (subject to any
+> extension under clause [LIM-TPC-NOTICE]), the Buyer shall not be entitled to
+> bring any Claim against the Seller (and undertakes to refrain from bringing any
+> Claim against the Seller), and the Seller shall not be obliged to satisfy any
+> Claim, if the relevant Claim is received by the Seller:
+>
+> (a) in respect of Claims relating to tax matters and/or Claims arising from the
+> occurrence of the circumstances giving rise to compensation of losses listed in
+> paragraph [TAX PARAGRAPHS] of Schedule [N] — after the expiry of [TAX PERIOD]
+> from the Closing Date;
+>
+> (b) in respect of Claims relating to title to the Sale Shares and/or Claims
+> arising from the occurrence of the circumstances giving rise to compensation of
+> losses listed in paragraphs [TITLE PARAGRAPHS] of Schedule [N] — after the
+> expiry of [TITLE PERIOD] from the Closing Date;
+>
+> (c) in respect of Claims relating to other matters and/or Claims arising from
+> the occurrence of the circumstances giving rise to compensation of losses
+> listed in paragraph [OTHER PARAGRAPHS] of Schedule [N] — after the expiry of
+> [OTHER PERIOD] from the Closing Date.
+
+---
+
+## LIM-TIME-TITLE — Claim period, title tier only
+
+**DRAFT**. Position 4 only.
+Requires: DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE, DEF-SALE-SHARES
+
+> Upon expiry of the period specified in this clause [N] below (subject to any
+> extension under clause [LIM-TPC-NOTICE]), the Buyer shall not be entitled to
+> bring any Claim against the Seller (and undertakes to refrain from bringing any
+> Claim against the Seller), and the Seller shall not be obliged to satisfy any
+> Claim, if the relevant Claim is received by the Seller in respect of Claims
+> relating to title to the Sale Shares and/or Claims arising from the occurrence
+> of the circumstances giving rise to compensation of losses listed in paragraphs
+> [TITLE PARAGRAPHS] of Schedule [N] — after the expiry of [TITLE PERIOD] from
+> the Closing Date.
 
 ---
 
@@ -134,16 +181,16 @@ Requires: LIM-TPC-NOTICE
 ## LIM-COND — Conditional claims
 
 **FROM AGREEMENT** (cl. 10.5). All positions except 1.
-Requires: LIM-TIME or LIM-TIME-FLAT, LIM-TPC-NOTICE, DEF-APPLICABLE-LAW
+Requires: one selected claim-period clause, LIM-TPC-NOTICE, DEF-APPLICABLE-LAW
 
 > If a Claim arises from a Third Party Claim, or from the facts, events or
 > circumstances set out in a Third Party Claim (a "Conditional Claim"), and:
 >
 > (i) the relevant Third Party Claim Notice was delivered to the Buyer within the
-> periods specified in clauses [LIM-TIME] and [LIM-TPC-NOTICE], or the Third
+> periods specified in clauses [LIM-PERIODS] and [LIM-TPC-NOTICE], or the Third
 > Party Claim was delivered to the Seller within those same periods; and
 >
-> (ii) as at the expiry of the periods specified in clause [LIM-TIME], the
+> (ii) as at the expiry of the periods specified in clause [LIM-PERIODS], the
 > relevant Third Party Claim had not yet been confirmed by:
 >
 > (a) a judgment of a Russian court that has entered into legal force, following
@@ -167,7 +214,7 @@ Requires: LIM-TIME or LIM-TIME-FLAT, LIM-TPC-NOTICE, DEF-APPLICABLE-LAW
 > [CONDITIONAL PERIOD] from the date on which the relevant Third Party Claim was
 > confirmed in accordance with this clause, and in such case satisfaction of that
 > Conditional Claim may not be refused on the ground that it was brought after
-> the periods specified in clause [LIM-TIME].
+> the periods specified in clause [LIM-PERIODS].
 
 ---
 

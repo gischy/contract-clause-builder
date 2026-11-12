@@ -35,9 +35,16 @@ details, propose answers drawn from them and ask for confirmation.
 5. **Cap** — seller side only; a percentage of the price, or a fixed sum, and
    the figure
 6. **Claim periods** — where they differ from the defaults
-7. **Indemnity schedule** — how many paragraphs, and which belong to the tax
-   tier, the title tier and the other tier
-8. **Specific caps** — any named breach or circumstance with its own cap; for
+7. **Other title assets** — seller, standard position only; identify assets
+   other than the Sale Shares to which the title-claim period must apply, or
+   confirm that there are none
+8. **Indemnity schedule** — a schedule is required. For the buyer-professional
+   position, confirm that it exists. For the standard seller position, identify
+   every paragraph and allocate it to the tax, title or other tier. For the
+   narrow seller position, identify every paragraph and allocate it to the title
+   tier; tax and other tiers must be absent.
+9. **Specific caps** — for every position that produces a section, any named
+   breach or circumstance with its own cap; for
    each, the breach, the amount, and whether it counts toward the general cap
 
 Do not ask about thresholds on a buyer-side draft, the third party claim notice
@@ -49,6 +56,15 @@ Ask for the disclosure date for every position that produces a limitation
 section. It is a required deal input: do not apply a default or leave the
 `[DISCLOSURE DATE]` placeholder unresolved. Position 1 produces no section, so
 do not ask for it once that position is established.
+
+For a seller-side standard position, ask for other title assets before choosing
+the claim-period variant. If there are none, select the no-other-title-assets
+variant; never insert “none” into a clause placeholder. Do not ask this question
+for the narrow seller position: its scope is limited to the Sale Shares.
+
+Do not continue if the required indemnity schedule or its complete allocation
+has not been supplied. A position 4 schedule contains title-tier paragraphs
+only.
 
 Inputs 1 and 2, or 1 and 3, determine the position. Establish the position
 before asking anything else — on position 1 the remaining questions do not
@@ -66,7 +82,8 @@ firm does not limit a non-professional seller's liability on a buyer-side
 draft — and stop. That is the correct output, not a failure.
 
 Otherwise start from the "Always included" list, then take what the selection
-table gives for the position, then add any specific caps asked for.
+table gives for the position (including the applicable claim-period variant),
+then add any specific caps asked for.
 
 Do not choose between variants on judgment. The table decides.
 

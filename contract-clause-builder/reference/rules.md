@@ -22,8 +22,8 @@ is the correct output, not a failure.
 |---|---|---|---|---|
 | 1 | — | — | — | — |
 | 2 | LIM-CAP-PRICE | LIM-TIME-FLAT | none | LIM-SCOPE |
-| 3 | LIM-CAP-PCT or LIM-CAP-FIXED | LIM-TIME | DEMIN + BASKET-EXCESS | LIM-SCOPE |
-| 4 | LIM-CAP-PCT or LIM-CAP-FIXED | LIM-TIME | DEMIN + BASKET-EXCESS | LIM-SCOPE-TITLE |
+| 3 | LIM-CAP-PCT or LIM-CAP-FIXED | LIM-TIME, or LIM-TIME-SHARES where there are no other title assets | DEMIN + BASKET-EXCESS | LIM-SCOPE |
+| 4 | LIM-CAP-PCT or LIM-CAP-FIXED | LIM-TIME-TITLE | DEMIN + BASKET-EXCESS | LIM-SCOPE-TITLE |
 
 ## Always included
 
@@ -40,9 +40,9 @@ Positions 3 and 4 additionally include LIM-MITIG-B.
 
 ## Specific caps — zero or more
 
-A separate cap may be attached to a named breach or indemnity circumstance.
-Asked for each one: which breach, what cap, and whether it counts toward the
-general cap or sits outside it.
+A separate cap may be attached to a named breach or indemnity circumstance in
+any position that produces a limitation section. Ask for each one: which breach,
+what cap, and whether it counts toward the general cap or sits outside it.
 
 | Clause | Repeatable |
 |---|---|
@@ -50,26 +50,27 @@ general cap or sits outside it.
 
 ## Parameters
 
-| Parameter | Position 2 | Positions 3 and 4 |
-|---|---|---|
-| Cap | 100% of price received | 25% of price, or a fixed sum |
-| Flat claim period | 5 years from Closing | n/a |
-| Tax claims | n/a | 3 years from Closing |
-| Title claims | n/a | 3 years from Closing |
-| Other claims | n/a | 1 year from Closing |
-| De minimis | n/a | 0.1% of price |
-| Basket | n/a | 1% of price |
-| Basket type | n/a | excess — only the amount above the threshold is recoverable |
-| Disclosure date | ask; no default | ask; no default |
-| Third party claim notice | 10 Business Days | 10 Business Days |
-| Conditional claim period | 60 calendar days | 60 calendar days |
+| Parameter | Position 2 | Position 3 | Position 4 |
+|---|---|---|---|
+| Cap | 100% of price received | 25% of price, or a fixed sum | 25% of price, or a fixed sum |
+| Flat claim period | 5 years from Closing | n/a | n/a |
+| Tax claims | n/a | 3 years from Closing | omitted |
+| Title claims | n/a | 3 years from Closing | 3 years from Closing |
+| Other claims | n/a | 1 year from Closing | omitted |
+| De minimis | n/a | 0.1% of price | 0.1% of price |
+| Basket | n/a | 1% of price | 1% of price |
+| Basket type | n/a | excess — only the amount above the threshold is recoverable | excess — only the amount above the threshold is recoverable |
+| Disclosure date | ask; no default | ask; no default | ask; no default |
+| Third party claim notice | 10 Business Days | 10 Business Days | 10 Business Days |
+| Conditional claim period | 60 calendar days | 60 calendar days | 60 calendar days |
 
 Flag every applied default in the output.
 
 ## Indemnity schedule allocation
 
-Positions 3 and 4 only. LIM-TIME allocates each paragraph of the indemnity
-schedule to a limitation tier. Every paragraph must be allocated to exactly one.
+Positions 3 and 4 only. The selected claim-period clause allocates each
+paragraph of the indemnity schedule to a limitation tier. Every paragraph must
+be allocated to exactly one.
 
 **Position 4 always has a schedule.** A title-only warranty deal still has an
 indemnity schedule (title tier only; tax and other tiers are omitted per
@@ -80,9 +81,9 @@ below) and is not specific to position 4.
 
 | Tier | Period | Paragraphs |
 |---|---|---|
-| Tax | 3 years | ask |
+| Tax | 3 years | ask for position 3; omitted for position 4 |
 | Title | 3 years | ask |
-| Other | 1 year | ask |
+| Other | 1 year | ask for position 3; omitted for position 4 |
 
 ## Dependencies
 
@@ -91,11 +92,14 @@ below) and is not specific to position 4.
 | LIM-SCOPE | DEF-REPS, DEF-SCHEDULE-LOSSES, DEF-CLAIM |
 | LIM-SCOPE-TITLE | DEF-REPS, DEF-CLAIM, DEF-SALE-SHARES |
 | LIM-TIME | DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE |
+| LIM-TIME-SHARES | DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE |
+| LIM-TIME-TITLE | DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE, DEF-SALE-SHARES |
 | LIM-TIME-FLAT | DEF-CLOSING-DATE, LIM-TPC-NOTICE |
 | LIM-TPC-NOTICE | DEF-BUSINESS-DAY, DEF-COMPANY |
 | LIM-TPC-CONDUCT | LIM-TPC-NOTICE |
-| LIM-COND | LIM-TIME or LIM-TIME-FLAT, LIM-TPC-NOTICE, DEF-APPLICABLE-LAW |
-| LIM-CAP-PRICE / PCT / FIXED | DEF-PRICE, DEF-CLAIM |
+| LIM-COND | one selected claim-period clause, LIM-TPC-NOTICE, DEF-APPLICABLE-LAW |
+| LIM-CAP-PRICE / PCT | DEF-PRICE, DEF-CLAIM |
+| LIM-CAP-FIXED | DEF-CLAIM |
 | LIM-CAP-SPECIFIC | a general cap clause |
 | DEMIN | DEF-CLAIM |
 | BASKET-EXCESS | DEF-CLAIM, DEMIN |
@@ -106,7 +110,7 @@ below) and is not specific to position 4.
 ## Consistency rules
 
 1. **Indemnity schedule allocation.** Positions 3 and 4 only. Every paragraph
-   of the indemnity schedule cited in LIM-TIME must be allocated to exactly one
+   of the indemnity schedule cited in the selected claim-period clause must be allocated to exactly one
    tier. Name any paragraph left unallocated or appearing twice, and stop.
 2. **Cap must reach the indemnity.** The cap clause must expressly state that it
    covers compensation of property losses. A clause limiting only "liability" does
