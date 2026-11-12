@@ -8,6 +8,17 @@ agent that executes the skill.
 default/non-default parameters) and 11 deliberately unsupported or
 inconsistent cases (E-series, testing escalation and refusal behavior).
 
+**Revision note (2026-11-12, second pass).** `reference/clauses.md` and
+`reference/rules.md` were restructured mid-evaluation: the single `LIM-TIME`
+clause was split into three position-specific variants — `LIM-TIME`
+(position 3, where title claims extend to other assets besides the Sale
+Shares), `LIM-TIME-SHARES` (position 3, no other title assets), and
+`LIM-TIME-TITLE` (position 4). T05, T06, T07b, T08, T09, T11, E07 and E08
+originally tested the old single-clause behavior and were revised below to
+specify the now-required "other title assets?" input and updated expected
+clause IDs. A new case, T13, was added to cover the plain `LIM-TIME` variant
+(with other title assets), which none of the original 23 cases exercised.
+
 ---
 
 ## T01 — Position 1, plain case
@@ -49,11 +60,13 @@ flagged as a default (explicitly given).
 ## T05 — Position 3, percentage cap, all defaults except cap
 
 **Input:** Seller side; full warranty package; cap = 20% of price
-(non-default); periods and thresholds not specified; indemnity schedule has
-10 paragraphs: 1–3 tax, 4–6 title, 7–10 other (fully allocated).
+(non-default); periods and thresholds not specified; no other title assets
+besides the Sale Shares; indemnity schedule has 10 paragraphs: 1–3 tax,
+4–6 title, 7–10 other (fully allocated).
 
-**Expected:** Position 3. LIM-SCOPE, LIM-TIME (tax 3y / title 3y / other 1y,
-all default, paragraphs 1–3 / 4–6 / 7–10), LIM-TPC-NOTICE (10 BD, default),
+**Expected:** Position 3. LIM-SCOPE, LIM-TIME-SHARES (no other title assets
+→ this variant, not plain LIM-TIME) (tax 3y / title 3y / other 1y, all
+default, paragraphs 1–3 / 4–6 / 7–10), LIM-TPC-NOTICE (10 BD, default),
 LIM-TPC-CONDUCT, LIM-COND (60 cd, default), LIM-CAP-PCT (20%, not default),
 DEMIN (0.1%, default), BASKET-EXCESS (1%, default, excess type),
 DISCL-DATAROOM, LIM-NODOUBLE, LIM-MITIG, LIM-MITIG-B, LIM-NOLP.
@@ -62,23 +75,27 @@ DISCL-DATAROOM, LIM-NODOUBLE, LIM-MITIG, LIM-MITIG-B, LIM-NOLP.
 
 **Input:** Seller side; full warranty; fixed-sum cap EUR 5,000,000 (not
 percentage); tax claim period set to 2 years (title and other left at
-default); schedule has 8 paragraphs: 1–2 tax, 3–5 title, 6–8 other.
+default); no other title assets besides the Sale Shares; schedule has
+8 paragraphs: 1–2 tax, 3–5 title, 6–8 other.
 
-**Expected:** LIM-CAP-FIXED (EUR 5,000,000) instead of LIM-CAP-PCT; LIM-TIME
-tax period = 2 years (not default, flagged as given), title 3y (default),
-other 1y (default); otherwise as T05's pattern minus LIM-CAP-PCT.
+**Expected:** LIM-CAP-FIXED (EUR 5,000,000) instead of LIM-CAP-PCT;
+LIM-TIME-SHARES (no other title assets) tax period = 2 years (not default,
+flagged as given), title 3y (default), other 1y (default); otherwise as
+T05's pattern minus LIM-CAP-PCT.
 
-## T07 — Position 3, two specific caps
+## T07b — Position 3, two specific caps (corrected; original T07 omitted the
+indemnity schedule, a test-case defect, logged in results.md)
 
 **Input:** Seller side; full warranty; cap not specified (default 25%);
-price = EUR 10,000,000; two specific caps: (a) breach of tax representations
-capped at EUR 1,000,000, counts toward the general cap; (b) breach of an
-environmental representation capped at EUR 300,000, sits outside (in
-addition to) the general cap.
+price = EUR 10,000,000; no other title assets besides the Sale Shares;
+schedule has 9 paragraphs: 1–3 tax, 4–6 title, 7–9 other; two specific
+caps: (a) breach of tax representations capped at EUR 1,000,000, counts
+toward the general cap; (b) breach of an environmental representation
+capped at EUR 300,000, sits outside (in addition to) the general cap.
 
-**Expected:** LIM-CAP-PCT (25%, flagged default) + two LIM-CAP-SPECIFIC
-instances as described. Consistency rule 5 passes: EUR 1,000,000 ≤ general
-cap of EUR 2,500,000.
+**Expected:** LIM-TIME-SHARES (no other title assets), LIM-CAP-PCT (25%,
+flagged default) + two LIM-CAP-SPECIFIC instances as described. Consistency
+rule 5 passes: EUR 1,000,000 ≤ general cap of EUR 2,500,000.
 
 ## T08 — Position 4, percentage cap, title-only schedule
 
@@ -87,8 +104,8 @@ cap of EUR 2,500,000.
 paragraphs.
 
 **Expected:** Position 4. LIM-SCOPE-TITLE (flagged DRAFT/unapproved),
-LIM-TIME with only the title limb (paragraphs 1–5, period 3y default) — tax
-and other limbs omitted per consistency rule 6 — LIM-TPC-NOTICE,
+LIM-TIME-TITLE (paragraphs 1–5, period 3y default — the purpose-built
+title-only claim-period clause, not a trimmed LIM-TIME), LIM-TPC-NOTICE,
 LIM-TPC-CONDUCT, LIM-COND, LIM-CAP-PCT (25%, default, flagged DRAFT), DEMIN
 (0.1%, default, flagged DRAFT), BASKET-EXCESS (1%, default, flagged DRAFT),
 DISCL-DATAROOM (flagged DRAFT), LIM-NODOUBLE, LIM-MITIG, LIM-MITIG-B,
@@ -100,8 +117,9 @@ LIM-NOLP.
 schedule has 3 paragraphs, all title (1–3); third-party claim notice period
 set to 15 Business Days instead of the default 10.
 
-**Expected:** As T08's pattern, but LIM-CAP-FIXED (EUR 2,000,000) and
-LIM-TPC-NOTICE period = 15 Business Days (flagged as given, not default).
+**Expected:** As T08's pattern (LIM-TIME-TITLE, not LIM-TIME), but
+LIM-CAP-FIXED (EUR 2,000,000) and LIM-TPC-NOTICE period = 15 Business Days
+(flagged as given, not default).
 
 ## T10 — Position 2, specific cap
 
@@ -116,12 +134,12 @@ any position except 1, not only 3/4.)
 ## T11 — Position 3, non-default but consistent thresholds
 
 **Input:** Seller side; full warranty; de minimis set to 0.2%, basket set to
-2% (both non-default, both explicitly given); schedule has 6 paragraphs:
-1–2 tax, 3–4 title, 5–6 other.
+2% (both non-default, both explicitly given); no other title assets besides
+the Sale Shares; schedule has 6 paragraphs: 1–2 tax, 3–4 title, 5–6 other.
 
-**Expected:** DEMIN (0.2%, not default), BASKET-EXCESS (2%, not default) —
-consistent (de minimis below basket, consistency rule 3 passes); otherwise
-standard position 3 set.
+**Expected:** LIM-TIME-SHARES (no other title assets); DEMIN (0.2%, not
+default), BASKET-EXCESS (2%, not default) — consistent (de minimis below
+basket, consistency rule 3 passes); otherwise standard position 3 set.
 
 ## T12 — Position 1, sophistication red herring
 
@@ -131,6 +149,22 @@ other deal history.
 
 **Expected:** Position 1 — no limitation section (still non-professional
 despite the holding-vehicle wrapper).
+
+## T13 — Position 3, other title assets (new, covers plain LIM-TIME)
+
+**Input:** Seller side; full warranty package; cap not specified (default
+25%); the Seller also warrants title to a registered trademark portfolio,
+in addition to the Sale Shares; schedule has 9 paragraphs: 1–3 tax, 4–6
+title, 7–9 other. Periods and thresholds not specified. Disclosure date:
+the date of signing (given, since it has no rule-table default and is a
+mandatory input).
+
+**Expected:** Position 3. Because other title assets exist, LIM-TIME (the
+full variant with the "and/or Claims relating to title to [OTHER ASSETS]"
+limb) applies, not LIM-TIME-SHARES. [OTHER ASSETS] resolves to the
+trademark portfolio. Otherwise standard position-3 defaults: tax 3y /
+title 3y / other 1y, de minimis 0.1%, basket 1%, cap 25% — all flagged
+default.
 
 ---
 
@@ -187,16 +221,18 @@ exists.
 
 ## E07 — Paragraph allocated twice
 
-**Input:** Position 3; 10-paragraph schedule; user allocates paragraph 5 to
-both the tax tier and the title tier.
+**Input:** Position 3; no other title assets besides the Sale Shares;
+10-paragraph schedule; user allocates paragraph 5 to both the tax tier and
+the title tier.
 
 **Expected:** Stop. Consistency rule 1 violation — flag paragraph 5 as
 allocated to more than one tier.
 
 ## E08 — Paragraph left unallocated
 
-**Input:** Position 3; 10-paragraph schedule; user allocates only paragraphs
-1–9, leaving paragraph 10 unassigned.
+**Input:** Position 3; no other title assets besides the Sale Shares;
+10-paragraph schedule; user allocates only paragraphs 1–9, leaving
+paragraph 10 unassigned.
 
 **Expected:** Stop. Consistency rule 1 violation — flag paragraph 10 as
 unallocated.

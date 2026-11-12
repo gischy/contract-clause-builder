@@ -41,11 +41,19 @@ Deadline: 2026-11-15.
   it's the English rendering; corrected.
 - Decision: everything stays in English (no Russian-language text added
   anywhere in the clause library, skill, or paper).
-- Still open, not yet resolved: the clause-review spreadsheet flags a
-  conflict between `LIM-SCOPE-TITLE` and `LIM-NODOUBLE` for position 4
-  (title-only warranty deals may have no indemnity schedule at all, but
-  `LIM-NODOUBLE` assumes one exists). See the xlsx `Instructions` sheet,
-  "Open question for the reviewing lawyer".
+- Position 4 design went through three revisions on 2026-11-12: (1) a single
+  shared `LIM-TIME` trimmed at assembly time; (2) split into `LIM-TIME`,
+  `LIM-TIME-SHARES`, `LIM-TIME-TITLE` with position 4 keeping an indemnity
+  schedule (title tier only); (3) **current**: position 4 redesigned to be
+  fully schedule-free (no indemnity schedule at all), with new
+  position-4-only clauses `LIM-CAP-PCT-TITLE`, `LIM-CAP-FIXED-TITLE`,
+  `LIM-CAP-SPECIFIC-TITLE`, and `LIM-NODOUBLE` no longer applying to
+  position 4. Always re-check `reference/rules.md`'s "Position" and "Always
+  included" tables before trusting any older note (including this one) on
+  position 4's exact clause set.
+- Given how fast this has moved, confirm with Felix/Nikita whether the
+  clause library is design-frozen before running or trusting any further
+  validity-evaluation numbers for position 4 specifically.
 
 ## Working notes
 
