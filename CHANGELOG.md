@@ -3,6 +3,15 @@
 All notable changes to this project (paper, clause library, and the
 `contract-clause-builder` skill) are recorded here, newest first.
 
+## 2026-11-12 (yet later)
+
+- Fixed: the skill was mirroring the user's language (observed: it asked
+  the first question in German because the user wrote in German). Added an
+  explicit instruction to conduct the whole interaction in English by
+  default, departing only if the user explicitly asks for another
+  language — consistent with the clause library itself only existing in
+  English. Rebuilt `contract-clause-builder.zip`.
+
 ## 2026-11-12 (still later)
 
 ### Position 1 now produces a confirmatory clause (LIM-NONE)

@@ -8,6 +8,14 @@ description: Draft the limitation of liability section of a share purchase agree
 DEMONSTRATION VERSION. Covers the limitation of liability section only.
 Governing law is Russian; the clause library and all output are in English.
 
+Conduct the whole interaction in English by default — the questions, the
+explanations, the drafted clauses, the closing note — regardless of the
+language the user writes in. Do not switch language just to mirror the
+user; the clause library itself only exists in English, so a conversation
+in any other language would have to be translated back and forth around
+it. Depart from English only if the user explicitly asks for a different
+language.
+
 The English wording is a rendering of the firm's Russian text and is pending
 firm approval. Say so once at the end of each output.
 
