@@ -134,7 +134,7 @@ Requires: LIM-TPC-NOTICE
 ## LIM-COND — Conditional claims
 
 **FROM AGREEMENT** (cl. 10.5). All positions except 1.
-Requires: LIM-TIME, LIM-TPC-NOTICE, DEF-APPLICABLE-LAW
+Requires: LIM-TIME or LIM-TIME-FLAT, LIM-TPC-NOTICE, DEF-APPLICABLE-LAW
 
 > If a Claim arises from a Third Party Claim, or from the facts, events or
 > circumstances set out in a Third Party Claim (a "Conditional Claim"), and:

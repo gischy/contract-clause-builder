@@ -30,18 +30,25 @@ details, propose answers drawn from them and ask for confirmation.
    fund, a strategic buyer, an institutional holder) or not?
 3. **Warranty scope** — seller side only; full warranty package, or title
    warranties only?
-4. **Cap** — seller side only; a percentage of the price, or a fixed sum, and
+4. **Disclosure date** — the date by which information must have been made
+   available in the Data Room for it to qualify as disclosed
+5. **Cap** — seller side only; a percentage of the price, or a fixed sum, and
    the figure
-5. **Claim periods** — where they differ from the defaults
-6. **Indemnity schedule** — how many paragraphs, and which belong to the tax
+6. **Claim periods** — where they differ from the defaults
+7. **Indemnity schedule** — how many paragraphs, and which belong to the tax
    tier, the title tier and the other tier
-7. **Specific caps** — any named breach or circumstance with its own cap; for
+8. **Specific caps** — any named breach or circumstance with its own cap; for
    each, the breach, the amount, and whether it counts toward the general cap
 
 Do not ask about thresholds on a buyer-side draft, the third party claim notice
 period, the conditional claim period, or which of the mitigation, lost profit
 and disclosure clauses to include. Those follow from the position or are fixed,
 and are set by `reference/rules.md`.
+
+Ask for the disclosure date for every position that produces a limitation
+section. It is a required deal input: do not apply a default or leave the
+`[DISCLOSURE DATE]` placeholder unresolved. Position 1 produces no section, so
+do not ask for it once that position is established.
 
 Inputs 1 and 2, or 1 and 3, determine the position. Establish the position
 before asking anything else — on position 1 the remaining questions do not

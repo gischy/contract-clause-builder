@@ -60,6 +60,7 @@ general cap or sits outside it.
 | De minimis | n/a | 0.1% of price |
 | Basket | n/a | 1% of price |
 | Basket type | n/a | excess — only the amount above the threshold is recoverable |
+| Disclosure date | ask; no default | ask; no default |
 | Third party claim notice | 10 Business Days | 10 Business Days |
 | Conditional claim period | 60 calendar days | 60 calendar days |
 
@@ -69,6 +70,13 @@ Flag every applied default in the output.
 
 Positions 3 and 4 only. LIM-TIME allocates each paragraph of the indemnity
 schedule to a limitation tier. Every paragraph must be allocated to exactly one.
+
+**Position 4 always has a schedule.** A title-only warranty deal still has an
+indemnity schedule (title tier only; tax and other tiers are omitted per
+consistency rule 6) — resolved per firm practice, 2026-11-12. LIM-NODOUBLE
+therefore applies unchanged in position 4. A deal with no indemnity schedule
+at all remains deliberately unsupported for every position (see "No match"
+below) and is not specific to position 4.
 
 | Tier | Period | Paragraphs |
 |---|---|---|
