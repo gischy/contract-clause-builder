@@ -23,14 +23,18 @@ is the correct output, not a failure.
 | 1 | — | — | — | — |
 | 2 | LIM-CAP-PRICE | LIM-TIME-FLAT | none | LIM-SCOPE |
 | 3 | LIM-CAP-PCT or LIM-CAP-FIXED | LIM-TIME, or LIM-TIME-SHARES where there are no other title assets | DEMIN + BASKET-EXCESS | LIM-SCOPE |
-| 4 | LIM-CAP-PCT or LIM-CAP-FIXED | LIM-TIME-TITLE | DEMIN + BASKET-EXCESS | LIM-SCOPE-TITLE |
+| 4 | LIM-CAP-PCT-TITLE or LIM-CAP-FIXED-TITLE | LIM-TIME-TITLE | DEMIN + BASKET-EXCESS | LIM-SCOPE-TITLE |
 
 ## Always included
 
 Wherever a limitation section is produced at all (positions 2, 3 and 4):
 
-LIM-TPC-NOTICE · LIM-TPC-CONDUCT · LIM-COND · LIM-NODOUBLE · LIM-MITIG ·
-LIM-NOLP · DISCL-DATAROOM
+LIM-TPC-NOTICE · LIM-TPC-CONDUCT · LIM-COND · LIM-MITIG · LIM-NOLP ·
+DISCL-DATAROOM
+
+Positions 2 and 3 additionally include LIM-NODOUBLE. Position 4 does not: it
+has no indemnity schedule and therefore no schedule-based property-loss claims
+to which LIM-NODOUBLE could apply.
 
 Exclusion of loss of profit is always included and is not negotiated.
 
@@ -42,7 +46,8 @@ Positions 3 and 4 additionally include LIM-MITIG-B.
 
 A separate cap may be attached to a named breach or indemnity circumstance in
 any position that produces a limitation section. Ask for each one: which breach,
-what cap, and whether it counts toward the general cap or sits outside it.
+what cap, and whether it counts toward the general cap or sits outside it. In
+position 4, the ground must be a title matter and LIM-CAP-SPECIFIC-TITLE is used.
 
 | Clause | Repeatable |
 |---|---|
@@ -68,22 +73,15 @@ Flag every applied default in the output.
 
 ## Indemnity schedule allocation
 
-Positions 3 and 4 only. The selected claim-period clause allocates each
-paragraph of the indemnity schedule to a limitation tier. Every paragraph must
-be allocated to exactly one.
-
-**Position 4 always has a schedule.** A title-only warranty deal still has an
-indemnity schedule (title tier only; tax and other tiers are omitted per
-consistency rule 6) — resolved per firm practice, 2026-11-12. LIM-NODOUBLE
-therefore applies unchanged in position 4. A deal with no indemnity schedule
-at all remains deliberately unsupported for every position (see "No match"
-below) and is not specific to position 4.
+Position 3 only. The selected claim-period clause allocates each paragraph of
+the indemnity schedule to a limitation tier. Every paragraph must be allocated
+to exactly one. Position 4 has no indemnity schedule.
 
 | Tier | Period | Paragraphs |
 |---|---|---|
-| Tax | 3 years | ask for position 3; omitted for position 4 |
+| Tax | 3 years | ask |
 | Title | 3 years | ask |
-| Other | 1 year | ask for position 3; omitted for position 4 |
+| Other | 1 year | ask |
 
 ## Dependencies
 
@@ -93,14 +91,17 @@ below) and is not specific to position 4.
 | LIM-SCOPE-TITLE | DEF-REPS, DEF-CLAIM, DEF-SALE-SHARES |
 | LIM-TIME | DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE |
 | LIM-TIME-SHARES | DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE |
-| LIM-TIME-TITLE | DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE, DEF-SALE-SHARES |
+| LIM-TIME-TITLE | DEF-CLOSING-DATE, LIM-TPC-NOTICE, DEF-SALE-SHARES |
 | LIM-TIME-FLAT | DEF-CLOSING-DATE, LIM-TPC-NOTICE |
 | LIM-TPC-NOTICE | DEF-BUSINESS-DAY, DEF-COMPANY |
 | LIM-TPC-CONDUCT | LIM-TPC-NOTICE |
 | LIM-COND | one selected claim-period clause, LIM-TPC-NOTICE, DEF-APPLICABLE-LAW |
 | LIM-CAP-PRICE / PCT | DEF-PRICE, DEF-CLAIM |
 | LIM-CAP-FIXED | DEF-CLAIM |
+| LIM-CAP-PCT-TITLE | DEF-PRICE, DEF-CLAIM |
+| LIM-CAP-FIXED-TITLE | DEF-CLAIM |
 | LIM-CAP-SPECIFIC | a general cap clause |
+| LIM-CAP-SPECIFIC-TITLE | a position-4 general cap clause |
 | DEMIN | DEF-CLAIM |
 | BASKET-EXCESS | DEF-CLAIM, DEMIN |
 | LIM-NODOUBLE | DEF-SCHEDULE-LOSSES |
@@ -109,22 +110,25 @@ below) and is not specific to position 4.
 
 ## Consistency rules
 
-1. **Indemnity schedule allocation.** Positions 3 and 4 only. Every paragraph
+1. **Indemnity schedule allocation.** Position 3 only. Every paragraph
    of the indemnity schedule cited in the selected claim-period clause must be allocated to exactly one
    tier. Name any paragraph left unallocated or appearing twice, and stop.
-2. **Cap must reach the indemnity.** The cap clause must expressly state that it
-   covers compensation of property losses. A clause limiting only "liability" does
-   not reach compensation under art. 406.1, which is not liability for breach.
+2. **Cap must reach the indemnity.** In positions 2 and 3, the cap clause must
+   expressly state that it covers compensation of property losses. A clause
+   limiting only "liability" does not reach compensation under art. 406.1, which
+   is not liability for breach. Position 4 is schedule-free and must not refer to
+   property losses.
 3. **De minimis below basket.** The de minimis figure must be lower than the
    basket figure. If it is not, the section is incoherent — say so and stop.
-4. **One cap only.** LIM-CAP-PRICE, LIM-CAP-PCT and LIM-CAP-FIXED are mutually
-   exclusive. Exactly one appears.
-5. **Specific caps.** Each LIM-CAP-SPECIFIC must state whether it counts toward
-   or sits outside the general cap. If it counts toward it, its amount must not
-   exceed it.
+4. **One cap only.** LIM-CAP-PRICE, LIM-CAP-PCT, LIM-CAP-FIXED,
+   LIM-CAP-PCT-TITLE and LIM-CAP-FIXED-TITLE are mutually exclusive. Exactly
+   one appears.
+5. **Specific caps.** Each LIM-CAP-SPECIFIC or LIM-CAP-SPECIFIC-TITLE must state
+   whether it counts toward or sits outside the general cap. If it counts toward
+   it, its amount must not exceed it. In position 4, it must cover title only.
 6. **Narrow scope.** In position 4, no clause in the output may create or assume
-   liability for any matter other than title. Check LIM-TIME in particular — the
-   tax and other tiers have nothing to attach to, so they are omitted.
+   liability for any matter other than title. Check LIM-TIME-TITLE in particular:
+   it must not refer to an indemnity schedule, property losses, tax or other tiers.
 7. **Cross-references.** LIM-COND and LIM-TIME refer to each other and to
    LIM-TPC-NOTICE by paragraph number. Every cross-reference must resolve.
 8. LIM-MITIG-B requires LIM-MITIG.
@@ -144,4 +148,4 @@ Deliberately not covered:
 | Escrow, retention or other security for claims | Separate clause family, out of scope |
 | Uplift of the cap for buyer contributions to the Company | Deal-specific, excluded from the set |
 | W&I insurance structures | Not used |
-| Deals with no indemnity schedule | LIM-SCOPE and LIM-TIME both assume one exists |
+| Buyer-professional or standard seller deals with no indemnity schedule | LIM-SCOPE and LIM-TIME both assume one exists; Position 4 is schedule-free |

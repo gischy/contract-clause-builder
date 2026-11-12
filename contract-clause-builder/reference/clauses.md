@@ -122,16 +122,14 @@ Requires: DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE
 ## LIM-TIME-TITLE — Claim period, title tier only
 
 **DRAFT**. Position 4 only.
-Requires: DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE, DEF-SALE-SHARES
+Requires: DEF-CLOSING-DATE, LIM-TPC-NOTICE, DEF-SALE-SHARES
 
 > Upon expiry of the period specified in this clause [N] below (subject to any
 > extension under clause [LIM-TPC-NOTICE]), the Buyer shall not be entitled to
 > bring any Claim against the Seller (and undertakes to refrain from bringing any
 > Claim against the Seller), and the Seller shall not be obliged to satisfy any
 > Claim, if the relevant Claim is received by the Seller in respect of Claims
-> relating to title to the Sale Shares and/or Claims arising from the occurrence
-> of the circumstances giving rise to compensation of losses listed in paragraphs
-> [TITLE PARAGRAPHS] of Schedule [N] — after the expiry of [TITLE PERIOD] from
+> relating to title to the Sale Shares — after the expiry of [TITLE PERIOD] from
 > the Closing Date.
 
 ---
@@ -236,7 +234,7 @@ of losses. The parenthesis is load-bearing — see consistency rule 2.
 
 ## LIM-CAP-PCT — Aggregate cap as a percentage of the price
 
-**DRAFT** — seller-side counterpart to LIM-CAP-PRICE. Positions 3 and 4.
+**DRAFT** — seller-side counterpart to LIM-CAP-PRICE. Position 3 only.
 Requires: DEF-PRICE, DEF-CLAIM
 
 > The Seller's aggregate liability to the Buyer under this Agreement in respect
@@ -250,8 +248,8 @@ Requires: DEF-PRICE, DEF-CLAIM
 ## LIM-CAP-FIXED — Aggregate cap as a fixed sum
 
 **FROM AGREEMENT, ADAPTED** — cl. 10.6 with the link to the purchase price
-replaced by a fixed sum. Positions 3 and 4, alternative.
-Requires: DEF-PRICE, DEF-CLAIM
+replaced by a fixed sum. Position 3, alternative.
+Requires: DEF-CLAIM
 
 > The Seller's aggregate liability to the Buyer under this Agreement in respect
 > of all Claims in aggregate (including, for the avoidance of doubt, property
@@ -260,10 +258,31 @@ Requires: DEF-PRICE, DEF-CLAIM
 
 ---
 
+## LIM-CAP-PCT-TITLE — Aggregate title-claim cap as a percentage of the price
+
+**DRAFT**. Position 4 only.
+Requires: DEF-PRICE, DEF-CLAIM
+
+> The Seller's aggregate liability to the Buyer under this Agreement in respect
+> of all Claims in aggregate shall not in any event exceed [PERCENTAGE]% of the
+> Purchase Price for the Sale Shares actually received by the Seller.
+
+---
+
+## LIM-CAP-FIXED-TITLE — Aggregate title-claim cap as a fixed sum
+
+**DRAFT**. Position 4 only.
+Requires: DEF-CLAIM
+
+> The Seller's aggregate liability to the Buyer under this Agreement in respect
+> of all Claims in aggregate shall not in any event exceed [AMOUNT].
+
+---
+
 ## LIM-CAP-SPECIFIC — Separate cap for a named ground
 
 **FROM AGREEMENT, ADAPTED** — cl. 10.6 narrowed to a single ground. Optional,
-any position except 1. Repeatable: zero or more instances.
+positions 2 and 3 only. Repeatable: zero or more instances.
 Requires: a general cap clause
 
 > The Seller's aggregate liability to the Buyer in respect of Claims arising from
@@ -274,6 +293,21 @@ Requires: a general cap clause
 
 Each instance states the ground, the amount, and its relationship to the general
 cap. Checked by consistency rule 5.
+
+---
+
+## LIM-CAP-SPECIFIC-TITLE — Separate cap for a title matter
+
+**DRAFT**. Position 4 only. Repeatable: zero or more instances.
+Requires: a position-4 general cap clause
+
+> The Seller's aggregate liability to the Buyer in respect of Claims arising from
+> [GROUND] shall not in any event exceed [AMOUNT OR PERCENTAGE]. This limit
+> [counts towards / is in addition to] the Seller's aggregate limit of liability
+> set out in clause [LIM-CAP].
+
+Each instance states a title ground, the amount, and its relationship to the
+general cap. Checked by consistency rule 5.
 
 ---
 

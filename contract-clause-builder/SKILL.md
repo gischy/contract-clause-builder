@@ -38,11 +38,11 @@ details, propose answers drawn from them and ask for confirmation.
 7. **Other title assets** — seller, standard position only; identify assets
    other than the Sale Shares to which the title-claim period must apply, or
    confirm that there are none
-8. **Indemnity schedule** — a schedule is required. For the buyer-professional
-   position, confirm that it exists. For the standard seller position, identify
-   every paragraph and allocate it to the tax, title or other tier. For the
-   narrow seller position, identify every paragraph and allocate it to the title
-   tier; tax and other tiers must be absent.
+8. **Indemnity schedule** — buyer-professional and standard seller positions
+   only. A schedule is required: for the buyer-professional position, confirm
+   that it exists; for the standard seller position, identify every paragraph
+   and allocate it to the tax, title or other tier. The narrow seller position
+   has no indemnity schedule.
 9. **Specific caps** — for every position that produces a section, any named
    breach or circumstance with its own cap; for
    each, the breach, the amount, and whether it counts toward the general cap
@@ -63,8 +63,7 @@ variant; never insert “none” into a clause placeholder. Do not ask this ques
 for the narrow seller position: its scope is limited to the Sale Shares.
 
 Do not continue if the required indemnity schedule or its complete allocation
-has not been supplied. A position 4 schedule contains title-tier paragraphs
-only.
+has not been supplied. Position 4 has no indemnity schedule.
 
 Inputs 1 and 2, or 1 and 3, determine the position. Establish the position
 before asking anything else — on position 1 the remaining questions do not
