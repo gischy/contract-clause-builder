@@ -5,6 +5,8 @@ Management): an analysis of AI's impact on M&A transactional legal drafting,
 grounded in a real law-firm practice, with a working Claude skill prototype
 and its validity evaluation.
 
+**Authors:** Nikita Butenko, Felix Kirchgeorg — Program P21.
+
 ## Contents
 
 - `2026_8_AI_Job_Impacts_Assignment_Brief.pdf`,
