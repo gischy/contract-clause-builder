@@ -20,20 +20,25 @@ as a batch, the skill:
    (On a buyer-side draft against a non-professional seller, the correct
    result is a single short clause, LIM-NONE, confirming liability is not
    limited — not a full section, but not silence either.)
-6. Optionally exports the result as a Word (.docx) or PDF file.
+6. Optionally exports the result as a Word (.docx), PDF or PowerPoint (.pptx)
+   file, on a minimalistic HHL-branded template (yellow accent, logo,
+   Verdana).
 
 ## Files
 
 - `SKILL.md` — the skill definition: the workflow Claude follows (collect
   inputs, select clauses, assemble, check).
-- `reference/clauses.md` — the clause library: 19 variants, English wording
+- `reference/clauses.md` — the clause library: 25 variants, English wording
   (a rendering of the firm's Russian-law originals, pending firm approval).
 - `reference/rules.md` — the rule table: the four positions, clause
   selection and dependencies, parameter defaults, consistency rules, and the
   combinations deliberately left unsupported.
-- `scripts/export.py` — converts the assembled section to `.docx` or `.pdf`
-  (PDF requires LibreOffice/`soffice` on PATH; falls back to a clear error,
-  not a crash, if it isn't available).
+- `scripts/export.py` — converts the assembled section to `.docx`, `.pdf` or
+  `.pptx`, on a minimalistic HHL-branded template (PDF requires LibreOffice/
+  `soffice` on PATH; falls back to a clear error, not a crash, if it isn't
+  available).
+- `assets/hhl_logo.png` — the HHL logo, bundled so the export works
+  standalone without depending on anything outside this package.
 
 ## How to run it
 

@@ -72,6 +72,7 @@ position 4, the ground must be a title matter and LIM-CAP-SPECIFIC-TITLE is used
 | Clause | Repeatable |
 |---|---|
 | LIM-CAP-SPECIFIC | yes, zero or more |
+| LIM-CAP-SPECIFIC-TITLE | yes, zero or more; position 4 only |
 
 ## Parameters
 
@@ -86,6 +87,7 @@ position 4, the ground must be a title matter and LIM-CAP-SPECIFIC-TITLE is used
 | Basket | n/a | 1% of price | 1% of price |
 | Basket type | n/a | excess — only the amount above the threshold is recoverable | excess — only the amount above the threshold is recoverable |
 | Disclosure date | ask; no default | ask; no default | ask; no default |
+| Purchase Price for cap comparison | ask only where required by consistency rule 5 | ask only where required by consistency rule 5 | ask only where required by consistency rule 5 |
 | Third party claim notice | 10 Business Days | 10 Business Days | 10 Business Days |
 | Conditional claim period | 60 calendar days | 60 calendar days | 60 calendar days |
 
@@ -147,7 +149,10 @@ to exactly one. Position 4 has no indemnity schedule.
    one appears.
 5. **Specific caps.** Each LIM-CAP-SPECIFIC or LIM-CAP-SPECIFIC-TITLE must state
    whether it counts toward or sits outside the general cap. If it counts toward
-   it, its amount must not exceed it. In position 4, it must cover title only.
+   it, its amount must not exceed it. Where the two caps use different units
+   (a fixed amount and a percentage), obtain the Purchase Price and calculate
+   both amounts before applying this check. In position 4, it must cover title
+   only.
 6. **Narrow scope.** In position 4, no clause in the output may create or assume
    liability for any matter other than title. Check LIM-TIME-TITLE in particular:
    it must not refer to an indemnity schedule, property losses, tax or other tiers.

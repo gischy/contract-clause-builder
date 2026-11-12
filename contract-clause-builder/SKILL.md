@@ -64,7 +64,10 @@ The inputs, in the order to ask them:
 9. **Specific caps** — for every position that produces a section, any named
    breach or circumstance with its own cap; for
    each, the breach, the amount, and whether it counts toward the general cap
-10. **Buyer type** — for every position that produces a section, regardless of
+10. **Purchase Price** — only if needed to compare a specific cap that counts
+    toward the general cap where one cap is a fixed amount and the other is a
+    percentage of the Purchase Price
+11. **Buyer type** — for every position that produces a section, regardless of
     which side is acting; is the Buyer a professional/institutional party (a
     fund, a strategic acquirer, an institutional investor) or an individual/
     private buyer? This is independent of the Position table and does not
@@ -90,6 +93,11 @@ for the narrow seller position: its scope is limited to the Sale Shares.
 
 Do not continue if the required indemnity schedule or its complete allocation
 has not been supplied. Position 4 has no indemnity schedule.
+
+Do not continue if a specific cap that counts toward the general cap cannot be
+compared with it because one is expressed as a percentage and the other as a
+fixed amount and the Purchase Price has not been supplied. Do not infer the
+Purchase Price from a defined term or another deal figure.
 
 Inputs 1 and 2, or 1 and 3, determine the position. Establish the position
 before asking anything else — on position 1 the remaining questions do not
@@ -134,7 +142,7 @@ this order:
    caps
 4. Thresholds — de minimis and basket, seller side only
 5. Disclosure through the data room
-6. No double recovery
+6. No double recovery — positions 2 and 3 only
 7. Mitigation
 8. Exclusion of lost profit
 9. Buyer's acknowledgment of reliance — professional/institutional Buyer only
@@ -155,8 +163,10 @@ Then:
 - Do the figures and periods match the rule table exactly?
 - Are any defaults flagged as defaults?
 - Are any DRAFT clauses flagged as unapproved?
-- Does the cap clause retain the parenthesis covering property losses?
-  (consistency rule 2)
+- In positions 2 and 3, does the cap clause retain the parenthesis covering
+  property losses? In position 4, is that language absent? (consistency rule 2)
+- Where a specific cap counts toward the general cap, has it been compared in
+  the same unit of account?
 - Is LIM-BUYER-SOPHISTICATED included if and only if the Buyer is
   professional/institutional? (consistency rule 10)
 - Is it stated that the English wording is pending firm approval?
@@ -166,21 +176,25 @@ End the output in English with:
 - the position taken, and why
 - the clause IDs selected
 - the defined terms the section relies on, to be checked against the agreement
-- any paragraph of the indemnity schedule not allocated to a limitation period
+- any paragraph of the indemnity schedule not allocated to a limitation period,
+  where an indemnity schedule is required
 
 ## Step 5 — Offer an export (optional)
 
 After delivering the output, ask once, as a single lettered-option question:
 "Would you like this exported as a file — A) no, text is fine  B) Word
-(.docx)  C) PDF?" Do not export unless the user asks for it here or later.
+(.docx)  C) PDF  D) PowerPoint (.pptx)?" Do not export unless the user asks
+for it here or later. The export uses a minimalistic HHL-branded template
+(logo, yellow accent rule or frame, Verdana) — not firm letterhead, since
+this is a demonstration deliverable, not a client-ready document.
 
-If the user chooses B or C:
+If the user chooses B, C or D:
 
 1. Write the exact assembled section plus its closing note (Steps 3-4's
    output, verbatim — nothing added, nothing paraphrased) to a temporary
    Markdown file.
 2. Run `scripts/export.py <that file> <output path>`, with the output path
-   ending `.docx` or `.pdf` to match their choice.
+   ending `.docx`, `.pdf` or `.pptx` to match their choice.
 3. Give the user the resulting file.
 
 If PDF export fails because LibreOffice isn't available in this

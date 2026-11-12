@@ -3,6 +3,31 @@
 All notable changes to this project (paper, clause library, and the
 `contract-clause-builder` skill) are recorded here, newest first.
 
+## 2026-11-12 (yet later still)
+
+### HHL-branded export template + PPTX support
+
+- Bundled the HHL logo (`assets/hhl_logo.png`) into the skill package so
+  export works standalone, without depending on the hhl-branding skill or
+  any machine-specific path.
+- `scripts/export.py` rewritten: now supports `.pptx` in addition to
+  `.docx`/`.pdf`, and applies a minimalistic HHL-branded template to all
+  three — logo, a single yellow (#FAAA00) accent (a rule under the DOCX
+  title block, a thin frame on PPTX slides), Verdana (the official
+  Office-theme fallback font, chosen over the corporate Gotham font for
+  portability to machines that don't have it installed).
+- PPTX export splits one slide per sub-clause (splitting on `###`, not the
+  section's single top-level heading), with a title slide carrying the
+  overall section heading.
+- Updated `SKILL.md` Step 5 to offer the PowerPoint option too.
+- Rebuilt `contract-clause-builder.zip`.
+- Carried forward an unrelated `reference/rules.md` refinement (made
+  directly by Felix/Nikita, not by me): comparing a fixed-amount specific
+  cap against a percentage-based general cap now explicitly requires
+  asking for the Purchase Price first, rather than silently assuming a
+  unit of account.
+- Not yet re-tested against the validity-evaluation set.
+
 ## 2026-11-12 (yet later)
 
 - Fixed: the skill was mirroring the user's language (observed: it asked
