@@ -22,12 +22,22 @@ by the firm and must be flagged in the output.
 
 ## Step 1 — Collect the inputs
 
-Ask for these as a short numbered list. If the user has supplied term sheet
-details, propose answers drawn from them and ask for confirmation.
+Ask one question at a time and wait for the answer before asking the next.
+Never combine two inputs into a single question — in particular, side and
+seller type (or side and warranty scope) are always two separate questions,
+never one. Where an input has a small fixed set of answers, offer them as
+lettered options (e.g. "A) Buyer  B) Seller") rather than open text, so the
+user can just pick one. If the user has supplied term sheet details that
+answer a question before it is asked, propose that answer and ask for
+confirmation instead of asking the question cold — but still one input at a
+time, never several folded into one confirmation.
 
-1. **Side** — buyer or seller?
-2. **Seller type** — buyer side only; is the seller a professional seller (a
-   fund, a strategic buyer, an institutional holder) or not?
+The inputs, in the order to ask them:
+
+1. **Side** — buyer or seller? Ask this alone, first.
+2. **Seller type** — buyer side only; once side is answered, ask next and
+   alone: is the seller a professional seller (a fund, a strategic buyer, an
+   institutional holder) or not?
 3. **Warranty scope** — seller side only; full warranty package, or title
    warranties only?
 4. **Disclosure date** — the date by which information must have been made
@@ -141,3 +151,25 @@ End the output in English with:
 - the clause IDs selected
 - the defined terms the section relies on, to be checked against the agreement
 - any paragraph of the indemnity schedule not allocated to a limitation period
+
+## Step 5 — Offer an export (optional)
+
+After delivering the output, ask once, as a single lettered-option question:
+"Would you like this exported as a file — A) no, text is fine  B) Word
+(.docx)  C) PDF?" Do not export unless the user asks for it here or later.
+
+If the user chooses B or C:
+
+1. Write the exact assembled section plus its closing note (Steps 3-4's
+   output, verbatim — nothing added, nothing paraphrased) to a temporary
+   Markdown file.
+2. Run `scripts/export.py <that file> <output path>`, with the output path
+   ending `.docx` or `.pdf` to match their choice.
+3. Give the user the resulting file.
+
+If PDF export fails because LibreOffice isn't available in this
+environment, say so plainly and offer the Word file instead — do not retry
+silently or fall back to pasting the text as a workaround.
+
+Position 1 produces no section, so there is nothing to export; skip this
+step entirely for position 1 drafts.

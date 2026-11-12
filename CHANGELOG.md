@@ -3,6 +3,23 @@
 All notable changes to this project (paper, clause library, and the
 `contract-clause-builder` skill) are recorded here, newest first.
 
+## 2026-11-12 (even later)
+
+### Wizard-flow fix and export feature
+
+- Fixed: `SKILL.md` Step 1 said "ask for these as a short numbered list,"
+  which a live run (reported by the user) followed literally — asking side
+  and seller type as one combined question instead of two. Rewrote Step 1
+  to require one question at a time, never combined, with lettered options
+  offered for fixed-choice inputs. The Position 1 output itself (no section,
+  reason given) was confirmed correct in that same run.
+- Added `scripts/export.py`: converts the assembled section to `.docx`
+  (always available, python-docx) or `.pdf` (needs LibreOffice/`soffice` on
+  PATH; fails with a clear message, not a crash or silent fallback, if it
+  isn't available). Added Step 5 to `SKILL.md` offering this export once,
+  after delivering the drafted section.
+- Rebuilt `contract-clause-builder.zip`.
+
 ## 2026-11-12 (later)
 
 ### Buyer-type question added (new feature, not yet re-tested)

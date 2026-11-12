@@ -7,15 +7,17 @@ firm-approved library of clause variants rather than drafting freely.
 ## What it does
 
 Given a handful of structured deal parameters (buyer/seller side, seller type,
-warranty scope, cap, claim periods, indemnity-schedule allocation, any specific
-caps), the skill:
+warranty scope, buyer type, cap, claim periods, indemnity-schedule
+allocation, any specific caps), collected one question at a time rather than
+as a batch, the skill:
 
 1. Establishes which of four transaction "positions" applies.
 2. Selects the clause variants the rule table assigns to that position.
 3. Inserts the parameters.
-4. Runs nine consistency checks before producing output.
+4. Runs ten consistency checks before producing output.
 5. Refuses to improvise and stops if the input combination isn't covered by
    the approved rule set — the correct result in that case, not a failure.
+6. Optionally exports the result as a Word (.docx) or PDF file.
 
 ## Files
 
@@ -26,11 +28,14 @@ caps), the skill:
 - `reference/rules.md` — the rule table: the four positions, clause
   selection and dependencies, parameter defaults, consistency rules, and the
   combinations deliberately left unsupported.
+- `scripts/export.py` — converts the assembled section to `.docx` or `.pdf`
+  (PDF requires LibreOffice/`soffice` on PATH; falls back to a clear error,
+  not a crash, if it isn't available).
 
 ## How to run it
 
-This is a Claude skill package (Markdown instructions + reference material,
-no code). To use it:
+This is a Claude skill package (Markdown instructions, a reference clause
+library, and one export script). To use it:
 
 1. Copy this folder into wherever Claude skills are loaded in your
    environment (for Claude Code: `~/.claude/skills/contract-clause-builder/`).
