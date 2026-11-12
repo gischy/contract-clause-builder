@@ -46,6 +46,13 @@ details, propose answers drawn from them and ask for confirmation.
 9. **Specific caps** — for every position that produces a section, any named
    breach or circumstance with its own cap; for
    each, the breach, the amount, and whether it counts toward the general cap
+10. **Buyer type** — for every position that produces a section, regardless of
+    which side is acting; is the Buyer a professional/institutional party (a
+    fund, a strategic acquirer, an institutional investor) or an individual/
+    private buyer? This is independent of the Position table and does not
+    change which position applies; it only decides whether
+    LIM-BUYER-SOPHISTICATED is included. Not asked on position 1 drafts, since
+    no section is produced at all.
 
 Do not ask about thresholds on a buyer-side draft, the third party claim notice
 period, the conditional claim period, or which of the mitigation, lost profit
@@ -104,6 +111,7 @@ Output as a numbered section, with these sub-headings, in this order:
 6. No double recovery
 7. Mitigation
 8. Exclusion of lost profit
+9. Buyer's acknowledgment of reliance — professional/institutional Buyer only
 
 Insert the figures and periods from the rule table. Resolve every internal
 cross-reference to the paragraph number it actually carries in the output.
@@ -123,6 +131,8 @@ Then:
 - Are any DRAFT clauses flagged as unapproved?
 - Does the cap clause retain the parenthesis covering property losses?
   (consistency rule 2)
+- Is LIM-BUYER-SOPHISTICATED included if and only if the Buyer is
+  professional/institutional? (consistency rule 10)
 - Is it stated that the English wording is pending firm approval?
 
 End the output in English with:

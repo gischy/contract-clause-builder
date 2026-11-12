@@ -3,6 +3,24 @@
 All notable changes to this project (paper, clause library, and the
 `contract-clause-builder` skill) are recorded here, newest first.
 
+## 2026-11-12 (later)
+
+### Buyer-type question added (new feature, not yet re-tested)
+
+- Added a new Step 1 input, asked on every position that produces a section
+  (2, 3, 4) regardless of which side is acting: is the Buyer professional/
+  institutional, or an individual/private buyer? Independent of the
+  Position table — does not change which position applies.
+- Added `LIM-BUYER-SOPHISTICATED` (DRAFT, market-derived, not firm-sourced):
+  a standard non-reliance/sophisticated-investor acknowledgment, included
+  only when the Buyer is professional/institutional.
+- Added consistency rule 10 (LIM-BUYER-SOPHISTICATED appears iff Buyer is
+  professional/institutional) and a new Step 3 sub-heading.
+- Rebuilt `contract-clause-builder.zip`.
+- **Not yet re-tested.** The 24-case validity evaluation does not cover this
+  new input at all; a further re-test is needed before any pass-rate claim
+  in the paper can be considered to include it.
+
 ## 2026-11-12
 
 ### Skill rename and fixes

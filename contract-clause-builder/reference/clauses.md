@@ -417,6 +417,22 @@ Requires: LIM-MITIG
 
 ---
 
+## LIM-BUYER-SOPHISTICATED — Buyer's acknowledgment of reliance
+
+**DRAFT** — derived from market practice, not a firm position. All positions
+that produce a limitation section (2, 3 and 4), where the Buyer is a
+professional/institutional party only. Never used where the Buyer is an
+individual/private buyer.
+Requires: DEF-REPS
+
+> The Buyer confirms that it is an experienced and professional investor and
+> that, in entering into this Agreement, it has relied solely on the Seller's
+> Representations expressly set out in this Agreement and not on any other
+> statement, projection, forecast, opinion or other information provided by
+> or on behalf of the Seller or the Company.
+
+---
+
 ## Defined terms relied on
 
 These live in the body of the agreement, not in this section. The output lists

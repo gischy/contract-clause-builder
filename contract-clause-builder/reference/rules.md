@@ -38,6 +38,22 @@ to which LIM-NODOUBLE could apply.
 
 Exclusion of loss of profit is always included and is not negotiated.
 
+## Buyer type — asked on every position that produces a section
+
+Positions 2, 3 and 4 all ask whether the Buyer is a professional/
+institutional party (a fund, a strategic acquirer, an institutional
+investor) or an individual/private buyer — regardless of which side is
+acting. This is independent of the Position table above and does not change
+which Position applies; it only decides whether LIM-BUYER-SOPHISTICATED is
+included.
+
+Not asked on Position 1 drafts, since no section is produced at all.
+
+| Buyer type | Result |
+|---|---|
+| Professional / institutional | LIM-BUYER-SOPHISTICATED included |
+| Individual / private | LIM-BUYER-SOPHISTICATED omitted |
+
 ## Seller side only
 
 Positions 3 and 4 additionally include LIM-MITIG-B.
@@ -107,6 +123,7 @@ to exactly one. Position 4 has no indemnity schedule.
 | LIM-NODOUBLE | DEF-SCHEDULE-LOSSES |
 | LIM-MITIG-B | LIM-MITIG |
 | DISCL-DATAROOM | DEF-REPS, DEF-DATA-ROOM |
+| LIM-BUYER-SOPHISTICATED | DEF-REPS |
 
 ## Consistency rules
 
@@ -133,6 +150,10 @@ to exactly one. Position 4 has no indemnity schedule.
    LIM-TPC-NOTICE by paragraph number. Every cross-reference must resolve.
 8. LIM-MITIG-B requires LIM-MITIG.
 9. Every DEF- dependency of every selected clause appears in the closing note.
+10. **Buyer sophistication.** LIM-BUYER-SOPHISTICATED appears if and only if
+    the Buyer is professional/institutional. Never include it for an
+    individual/private Buyer, and never omit it for a professional/
+    institutional Buyer.
 
 ## No match
 
