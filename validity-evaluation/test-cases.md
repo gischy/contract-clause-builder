@@ -4,9 +4,22 @@ Written before the skill was run on any of these cases. Ground truth is
 derived mechanically from `reference/rules.md`; no case here was shown to the
 agent that executes the skill.
 
-23 cases: 12 normal (T-series, covering all four positions and a range of
-default/non-default parameters) and 11 deliberately unsupported or
-inconsistent cases (E-series, testing escalation and refusal behavior).
+## Status — superseded test ground truth
+
+This test set is retained as an audit trail of the earlier evaluation waves.
+It is not current ground truth for the present skill version and must not be
+used to support aggregate validity claims. The current skill now has a
+schedule-free Position 4, a LIM-NONE output for Position 1, buyer-type logic,
+and additional title-only cap variants. Before re-testing, create a versioned
+replacement test set from the frozen `SKILL.md`, `reference/rules.md` and
+`reference/clauses.md`; include normal and adverse cases for each of those new
+decision paths, and provide the mandatory disclosure date in every case that
+is intended to reach assembly.
+
+The historical suite contains 23 original cases: 12 normal (T-series, covering
+all four positions and a range of default/non-default parameters) and 11
+deliberately unsupported or inconsistent cases (E-series, testing escalation
+and refusal behavior).
 
 **Revision note (2026-11-12, second pass).** `reference/clauses.md` and
 `reference/rules.md` were restructured mid-evaluation: the single `LIM-TIME`
