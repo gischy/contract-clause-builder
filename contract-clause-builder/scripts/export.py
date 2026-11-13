@@ -92,31 +92,52 @@ def build_docx(blocks, out_path):
 
     doc = Document()
 
+    # Page geometry — python-docx's built-in default (1in/2.54cm margins, a
+    # 0.5in header distance) reads as cramped once a logo sits in the header
+    # and crowded next to the yellow rule. Use clean, consistent HHL
+    # Working-Paper-style margins instead.
+    section = doc.sections[0]
+    section.top_margin = Cm(2.5)
+    section.bottom_margin = Cm(2.5)
+    section.left_margin = Cm(2.5)
+    section.right_margin = Cm(2.5)
+    section.header_distance = Cm(1.25)
+    section.footer_distance = Cm(1.25)
+
     normal = doc.styles["Normal"]
     normal.font.name = FONT
     normal.font.size = Pt(10)
     normal.font.color.rgb = RGBColor.from_string(HHL_BLACK)
-    for level, size in [("Title", 20), ("Heading 1", 15), ("Heading 2", 12)]:
+    normal.paragraph_format.space_after = Pt(8)
+    normal.paragraph_format.line_spacing = 1.15
+
+    heading_specs = {"Title": (20, 4, 12), "Heading 1": (15, 18, 6), "Heading 2": (12, 12, 4)}
+    for level, (size, before, after) in heading_specs.items():
         s = doc.styles[level]
         s.font.name = FONT
         s.font.size = Pt(size)
         s.font.bold = True
         s.font.color.rgb = RGBColor.from_string(HHL_BLACK)
+        s.paragraph_format.space_before = Pt(before)
+        s.paragraph_format.space_after = Pt(after)
 
     if os.path.exists(LOGO_PATH):
         header_par = doc.sections[0].header.paragraphs[0]
         header_par.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        header_par.paragraph_format.space_after = Pt(0)
         run = header_par.add_run()
-        width_cm = 4.5
+        width_cm = 4.0
         run.add_picture(LOGO_PATH, width=Cm(width_cm), height=Cm(width_cm / LOGO_ASPECT))
 
     # Thin yellow rule under the title block (signature HHL element)
     rule_par = doc.add_paragraph()
+    rule_par.paragraph_format.space_after = Pt(14)
     pPr = rule_par._p.get_or_add_pPr()
     borders = OxmlElement("w:pBdr")
     bottom = OxmlElement("w:bottom")
     bottom.set(qn("w:val"), "single")
     bottom.set(qn("w:sz"), "18")
+    bottom.set(qn("w:space"), "1")
     bottom.set(qn("w:color"), HHL_YELLOW)
     borders.append(bottom)
     pPr.append(borders)
@@ -130,7 +151,9 @@ def build_docx(blocks, out_path):
             doc.add_heading(b["text"], level=2)
         elif b["type"] == "quote":
             p = doc.add_paragraph()
-            p.paragraph_format.left_indent = Inches(0.4)
+            p.paragraph_format.left_indent = Cm(1.0)
+            p.paragraph_format.right_indent = Cm(1.0)
+            p.paragraph_format.space_after = Pt(10)
             _docx_add_runs(p, b["text"])
         elif b["type"] == "bullet":
             p = doc.add_paragraph(style="List Bullet")

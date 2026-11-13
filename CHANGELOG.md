@@ -3,6 +3,19 @@
 All notable changes to this project (paper, clause library, and the
 `contract-clause-builder` skill) are recorded here, newest first.
 
+## 2026-11-13 (later)
+
+### DOCX export layout fixed
+
+- The DOCX template relied on python-docx's built-in defaults (1in/2.54cm
+  margins, 0.5in header distance, inherited paragraph spacing), which read
+  as cramped once a logo sat in the header next to the yellow rule.
+  Set explicit, consistent values: 2.5cm margins all around, 1.25cm header/
+  footer distance, explicit heading/paragraph spacing (space before/after),
+  and a symmetric 1cm left/right indent with spacing on clause quote blocks
+  (previously left-indent only, no right indent or spacing).
+- Rebuilt `contract-clause-builder.zip`.
+
 ## 2026-11-13
 
 ### Whole clause set confirmed approved; disclosure-date dead end fixed
