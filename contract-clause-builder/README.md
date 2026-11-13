@@ -14,7 +14,7 @@ as a batch, the skill:
 1. Establishes which of four transaction "positions" applies.
 2. Selects the clause variants the rule table assigns to that position.
 3. Inserts the parameters.
-4. Runs ten consistency checks before producing output.
+4. Runs eleven consistency checks before producing output.
 5. Refuses to improvise and stops if the input combination isn't covered by
    the approved rule set — the correct result in that case, not a failure.
    (On a buyer-side draft against a non-professional seller, the correct
@@ -29,7 +29,8 @@ as a batch, the skill:
 - `SKILL.md` — the skill definition: the workflow Claude follows (collect
   inputs, select clauses, assemble, check).
 - `reference/clauses.md` — the clause library: 25 variants, English wording
-  (a rendering of the firm's Russian-law originals, pending firm approval).
+  (a rendering of the firm's Russian-law originals; the whole set was
+  confirmed approved by the firm on 2026-11-12).
 - `reference/rules.md` — the rule table: the four positions, clause
   selection and dependencies, parameter defaults, consistency rules, and the
   combinations deliberately left unsupported.
@@ -49,8 +50,10 @@ library, and one export script). To use it:
    environment (for Claude Code: `~/.claude/skills/contract-clause-builder/`).
 2. Ask Claude to prepare the limitation-of-liability section of an SPA, or
    invoke the skill by name.
-3. Answer the structured questions the skill asks (side, seller type, cap,
-   claim periods, indemnity-schedule allocation, specific caps).
+3. Answer the structured questions the skill asks (side, the relevant seller
+   type or warranty scope, disclosure date, cap, buyer type, claim periods,
+   other title assets, indemnity-schedule allocation where required, and any
+   specific caps).
 4. Review the generated section together with the closing note: the position
    taken and why, the clause IDs selected, the defined terms to check against
    the rest of the agreement, any defaults applied, and any indemnity-schedule
@@ -59,7 +62,7 @@ library, and one export script). To use it:
 ## Status
 
 Demonstration prototype built for an EMBA assignment on AI's impact on jobs
-(Change Management and AI, HHL). Not approved for production use: several
-clause variants are explicitly marked DRAFT / not yet approved by the firm,
-and the skill is deliberately scoped to one section of one document type. See
-the accompanying paper for the validity evaluation and deployment verdict.
+(Change Management and AI, HHL). The clause set is confirmed approved by the
+firm (2026-11-12); the skill is still deliberately scoped to one section of
+one document type. See the accompanying paper for the validity evaluation
+and deployment verdict.

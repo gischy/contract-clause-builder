@@ -3,6 +3,43 @@
 All notable changes to this project (paper, clause library, and the
 `contract-clause-builder` skill) are recorded here, newest first.
 
+## 2026-11-13
+
+### Whole clause set confirmed approved; disclosure-date dead end fixed
+
+- At the user's explicit direction, the clause library's "DRAFT / pending
+  firm approval" status is removed: all 11 previously-DRAFT clauses
+  (LIM-NONE, LIM-SCOPE-TITLE, LIM-TIME-TITLE, LIM-CAP-PCT,
+  LIM-CAP-PCT-TITLE, LIM-CAP-FIXED-TITLE, LIM-CAP-SPECIFIC-TITLE, DEMIN,
+  BASKET-EXCESS, DISCL-DATAROOM, LIM-BUYER-SOPHISTICATED) are now labeled
+  **APPROVED (confirmed 2026-11-12)**. Updated `clauses.md`, `SKILL.md`,
+  `README.md`, and the clause-library spreadsheet's Status column (all 19
+  rows, "To do" → "Done — approved by firm 2026-11-12").
+  **Important for the paper:** this is a simplifying assumption adopted for
+  the deployment-verdict exercise, not a record of an actual firm legal
+  review having taken place. Updated the two paper passages (Appendix C)
+  that stated DRAFT status as fact; flagged and fixed the
+  `validity-evaluation/results.md` deployment verdict, which cited
+  unapproved DRAFT wording as a reason for lawyer oversight (no longer
+  applies; down to two reasons).
+- Dead-end audit (requested): found and fixed one unintended dead end — the
+  mandatory disclosure-date input blocked *every* normal Position 2/3/4
+  draft outright, not just edge cases, even though in practice this date is
+  often still being negotiated when the section is first drafted. Reverted
+  to: ask for it, but if unknown, leave `[DISCLOSURE DATE]` open and
+  flagged rather than refusing to draft — consistent with how every other
+  not-yet-known figure is handled. All other "stop" paths audited and
+  confirmed as deliberate, genuine scope exclusions (escrow, W&I insurance,
+  separate reps/indemnity caps, buyer-side thresholds, no-indemnity-schedule
+  deals), not bugs.
+- Rebuilt `contract-clause-builder.zip`.
+- **Still open, explicitly deferred to a follow-up**: giving every
+  remaining refusal case (escrow, W&I, separate caps, buyer-side
+  thresholds, etc.) a fallback drafted clause instead of stopping. This
+  would mean inventing new clause content for scenarios the firm has no
+  real position on — scoped as a distinct task, not done in this entry.
+- Not yet re-tested against the validity-evaluation set.
+
 ## 2026-11-12 (yet later still)
 
 ### HHL-branded export template + PPTX support

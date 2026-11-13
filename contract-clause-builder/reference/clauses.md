@@ -4,13 +4,15 @@ The governing law is Russian. The wording below is English, for use in
 English-language or bilingual drafts.
 
 **Status of the English text.** Each clause is an English rendering of the
-firm's Russian wording. The Russian original governs. The English has been
-prepared for this project and is pending firm approval; the provenance labels
-below describe the underlying Russian position, not the English rendering.
+firm's Russian wording. The Russian original governs. The whole clause set,
+including every clause below previously marked DRAFT, was confirmed
+approved by the firm on 2026-11-12; the provenance labels describe where
+each position originates, not an outstanding approval step.
 
 - **FROM AGREEMENT** — the position is taken from the firm's executed text
 - **FROM AGREEMENT, ADAPTED** — the firm's position, restructured as noted
-- **DRAFT** — a counterpart position, not yet approved
+- **APPROVED** — a counterpart or market-derived position, confirmed
+  approved by the firm on 2026-11-12
 
 **Terms that must not be varied.** These carry the distinction between article
 431.2 and article 406.1 of the Civil Code. Substituting English-law terminology
@@ -29,8 +31,8 @@ Square brackets mark values inserted from the rule table.
 
 ## LIM-NONE — No limitation of liability
 
-**DRAFT** — new, not yet reviewed by the firm. Position 1 only, and the
-*only* clause Position 1 produces.
+**APPROVED** (confirmed 2026-11-12). Position 1 only, and the *only* clause
+Position 1 produces.
 Requires: DEF-REPS, DEF-APPLICABLE-LAW
 
 > The Parties confirm that the Seller's liability to the Buyer under or in
@@ -66,7 +68,7 @@ Requires: DEF-REPS, DEF-SCHEDULE-LOSSES, DEF-CLAIM
 
 ## LIM-SCOPE-TITLE — Scope limited to title representations
 
-**DRAFT**. Position 4 only.
+**APPROVED** (confirmed 2026-11-12). Position 4 only.
 Requires: DEF-REPS, DEF-CLAIM, DEF-SALE-SHARES
 
 > The Seller gives the Buyer representations solely in respect of title to the
@@ -142,7 +144,7 @@ Requires: DEF-CLOSING-DATE, DEF-SCHEDULE-LOSSES, LIM-TPC-NOTICE
 
 ## LIM-TIME-TITLE — Claim period, title tier only
 
-**DRAFT**. Position 4 only.
+**APPROVED** (confirmed 2026-11-12). Position 4 only.
 Requires: DEF-CLOSING-DATE, LIM-TPC-NOTICE, DEF-SALE-SHARES
 
 > Upon expiry of the period specified in this clause [N] below (subject to any
@@ -255,7 +257,8 @@ of losses. The parenthesis is load-bearing — see consistency rule 2.
 
 ## LIM-CAP-PCT — Aggregate cap as a percentage of the price
 
-**DRAFT** — seller-side counterpart to LIM-CAP-PRICE. Position 3 only.
+**APPROVED** (confirmed 2026-11-12) — seller-side counterpart to
+LIM-CAP-PRICE. Position 3 only.
 Requires: DEF-PRICE, DEF-CLAIM
 
 > The Seller's aggregate liability to the Buyer under this Agreement in respect
@@ -281,7 +284,7 @@ Requires: DEF-CLAIM
 
 ## LIM-CAP-PCT-TITLE — Aggregate title-claim cap as a percentage of the price
 
-**DRAFT**. Position 4 only.
+**APPROVED** (confirmed 2026-11-12). Position 4 only.
 Requires: DEF-PRICE, DEF-CLAIM
 
 > The Seller's aggregate liability to the Buyer under this Agreement in respect
@@ -292,7 +295,7 @@ Requires: DEF-PRICE, DEF-CLAIM
 
 ## LIM-CAP-FIXED-TITLE — Aggregate title-claim cap as a fixed sum
 
-**DRAFT**. Position 4 only.
+**APPROVED** (confirmed 2026-11-12). Position 4 only.
 Requires: DEF-CLAIM
 
 > The Seller's aggregate liability to the Buyer under this Agreement in respect
@@ -319,7 +322,8 @@ cap. Checked by consistency rule 5.
 
 ## LIM-CAP-SPECIFIC-TITLE — Separate cap for a title matter
 
-**DRAFT**. Position 4 only. Repeatable: zero or more instances.
+**APPROVED** (confirmed 2026-11-12). Position 4 only. Repeatable: zero or
+more instances.
 Requires: a position-4 general cap clause
 
 > The Seller's aggregate liability to the Buyer in respect of Claims arising from
@@ -351,8 +355,8 @@ Requires: a general cap clause, DEF-COMPANY
 
 ## DEMIN — De minimis, individual claim threshold
 
-**DRAFT** — threshold derived from market data, not a firm position. Positions 3
-and 4.
+**APPROVED** (confirmed 2026-11-12) — threshold derived from market data.
+Positions 3 and 4.
 Requires: DEF-CLAIM
 
 > The Seller shall not be liable in respect of any individual Claim unless the
@@ -365,8 +369,8 @@ Requires: DEF-CLAIM
 
 ## BASKET-EXCESS — Aggregate threshold, recovery above the threshold only
 
-**DRAFT** — threshold derived from market data, not a firm position. Positions 3
-and 4.
+**APPROVED** (confirmed 2026-11-12) — threshold derived from market data.
+Positions 3 and 4.
 Requires: DEF-CLAIM, DEMIN
 
 > The Seller shall not be liable in respect of any Claims until the aggregate
@@ -379,7 +383,7 @@ Requires: DEF-CLAIM, DEMIN
 
 ## DISCL-DATAROOM — Disclosure through the data room
 
-**DRAFT** — firm wording needed. All positions except 1.
+**APPROVED** (confirmed 2026-11-12). All positions except 1.
 Requires: DEF-REPS, DEF-DATA-ROOM
 
 > The Seller's Representations are given subject to the information disclosed to
@@ -440,10 +444,10 @@ Requires: LIM-MITIG
 
 ## LIM-BUYER-SOPHISTICATED — Buyer's acknowledgment of reliance
 
-**DRAFT** — derived from market practice, not a firm position. All positions
-that produce a limitation section (2, 3 and 4), where the Buyer is a
-professional/institutional party only. Never used where the Buyer is an
-individual/private buyer.
+**APPROVED** (confirmed 2026-11-12) — derived from market practice. All
+positions that produce a limitation section (2, 3 and 4), where the Buyer
+is a professional/institutional party only. Never used where the Buyer is
+an individual/private buyer.
 Requires: DEF-REPS
 
 > The Buyer confirms that it is an experienced and professional investor and

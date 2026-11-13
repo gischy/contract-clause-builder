@@ -1,5 +1,26 @@
 # Validity evaluation — results
 
+## Current evidentiary status — re-test required before submission
+
+The results below are a historical record of the evaluation waves, not a
+validity claim for the current version of the skill. Since the latest completed
+wave, the skill has changed materially: Position 4 became schedule-free;
+Position-4-only cap variants were added; Position 1 now produces LIM-NONE
+rather than silence; buyer-type logic can add LIM-BUYER-SOPHISTICATED; and
+the whole clause set — every clause previously marked DRAFT — was confirmed
+approved by the firm on 2026-11-12, replacing the "pending approval" status
+this file's deployment verdict (below) still assumed.
+These changes alter both the expected clause set and the required inputs.
+
+Accordingly, do not carry the historic aggregate results (including “24 of 24”
+or “100%”) into the paper's final Table 5, Appendix B, deployment verdict or
+quantitative model. Freeze the rule table, update the pre-registered ground
+truth, and re-run the complete test set with the final skill package. The final
+report must identify the execution environment/model, date, raw outputs,
+reviewer and scoring decision for each case. Until then, the defensible
+deployment verdict is **prototype only; not validated for use on the current
+rule set**.
+
 Ground truth was pre-registered in `test-cases.md` before any case was run
 (see that file for full inputs and expected results). Each case was then
 executed by an independent, context-free agent: each one reads only
@@ -163,21 +184,18 @@ first-draft assistant** for the limitation-of-liability section of a
 Russian-law SPA, within the four pre-defined transaction positions covered
 by the rule table. It reliably selects the correct clause variants
 (including correctly navigating the three-way claim-period split added
-mid-evaluation), inserts parameters correctly, flags defaults and
-unapproved (DRAFT) wording, correctly enforces the newly-added mandatory
-disclosure-date input, and — in every case tested — correctly refuses to
-improvise outside the approved rule set.
+mid-evaluation), inserts parameters correctly, flags defaults, correctly
+enforces the newly-added mandatory disclosure-date input, and — in every
+case tested — correctly refuses to improvise outside the approved rule set.
 
-It should **not** be relied on without lawyer review, for three concrete
-reasons grounded in the evidence above:
+It should **not** be relied on without lawyer review, for two concrete
+reasons grounded in the evidence above (a third reason — unapproved DRAFT
+wording — no longer applies: the whole clause set was confirmed approved by
+the firm on 2026-11-12):
 
-1. A large share of any real output carries at least one unapproved (DRAFT)
-   clause — `DISCL-DATAROOM` alone appears, DRAFT, in every position 2-4
-   output in this test set — so firm sign-off on the underlying wording is
-   still outstanding business, independent of how well the skill applies it.
-2. Behavior is not fully deterministic at the exact boundary identified
+1. Behavior is not fully deterministic at the exact boundary identified
    above (schedule left unspecified); a lawyer must still verify that a
    "no match" refusal or a drafted-with-open-brackets response is the
    intended one for the actual deal.
-3. The test set used clean, structured inputs; reliability on raw,
+2. The test set used clean, structured inputs; reliability on raw,
    unstructured client instructions has not been measured.

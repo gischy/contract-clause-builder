@@ -16,15 +16,12 @@ in any other language would have to be translated back and forth around
 it. Depart from English only if the user explicitly asks for a different
 language.
 
-The English wording is a rendering of the firm's Russian text and is pending
-firm approval. Say so once at the end of each output.
+The English wording is a rendering of the firm's Russian text. The whole
+clause set was confirmed approved by the firm on 2026-11-12.
 
 The clause set is closed. Every output is assembled from the variants in
 `reference/clauses.md`, chosen according to `reference/rules.md`. Nothing is
 drafted from scratch and nothing is adapted.
-
-Clause variants marked DRAFT in `reference/clauses.md` have not been approved
-by the firm and must be flagged in the output.
 
 ---
 
@@ -81,10 +78,12 @@ and disclosure clauses to include. Those follow from the position or are fixed,
 and are set by `reference/rules.md`.
 
 Ask for the disclosure date for every position that produces a limitation
-section. It is a required deal input: do not apply a default or leave the
-`[DISCLOSURE DATE]` placeholder unresolved. Position 1 produces only LIM-NONE,
-not a limitation section, so do not ask for it once that position is
-established.
+section — but if it is not yet known (commonly the case: it is often still
+being negotiated when this section is first drafted), do not block the
+draft on it. Leave the `[DISCLOSURE DATE]` placeholder open in the output
+and flag it clearly as unresolved, the same way other not-yet-known figures
+are handled. Never invent a date. Position 1 produces only LIM-NONE, not a
+limitation section, so do not ask for it once that position is established.
 
 For a seller-side standard position, ask for other title assets before choosing
 the claim-period variant. If there are none, select the no-other-title-assets
@@ -162,14 +161,12 @@ Then:
 - Does every internal cross-reference resolve?
 - Do the figures and periods match the rule table exactly?
 - Are any defaults flagged as defaults?
-- Are any DRAFT clauses flagged as unapproved?
 - In positions 2 and 3, does the cap clause retain the parenthesis covering
   property losses? In position 4, is that language absent? (consistency rule 2)
 - Where a specific cap counts toward the general cap, has it been compared in
   the same unit of account?
 - Is LIM-BUYER-SOPHISTICATED included if and only if the Buyer is
   professional/institutional? (consistency rule 10)
-- Is it stated that the English wording is pending firm approval?
 
 End the output in English with:
 

@@ -86,7 +86,7 @@ position 4, the ground must be a title matter and LIM-CAP-SPECIFIC-TITLE is used
 | De minimis | n/a | 0.1% of price | 0.1% of price |
 | Basket | n/a | 1% of price | 1% of price |
 | Basket type | n/a | excess — only the amount above the threshold is recoverable | excess — only the amount above the threshold is recoverable |
-| Disclosure date | ask; no default | ask; no default | ask; no default |
+| Disclosure date | ask; no default; leave open and flagged if not yet known | ask; no default; leave open and flagged if not yet known | ask; no default; leave open and flagged if not yet known |
 | Purchase Price for cap comparison | ask only where required by consistency rule 5 | ask only where required by consistency rule 5 | ask only where required by consistency rule 5 |
 | Third party claim notice | 10 Business Days | 10 Business Days | 10 Business Days |
 | Conditional claim period | 60 calendar days | 60 calendar days | 60 calendar days |
