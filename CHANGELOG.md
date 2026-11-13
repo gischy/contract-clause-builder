@@ -3,6 +3,48 @@
 All notable changes to this project (paper, clause library, and the
 `contract-clause-builder` skill) are recorded here, newest first.
 
+## 2026-11-13 (much later)
+
+### Option 2: fallback clauses for every remaining refusal case
+
+At the user's explicit direction, after the dead-end audit: gave every
+remaining "deliberately unsupported" combination a real clause path instead
+of a flat refusal. Six new/broadened paths, all now APPROVED:
+
+- **Buyer-side thresholds** — `DEMIN`/`BASKET-EXCESS` broadened to position
+  2 on request (reused verbatim, no new drafting).
+- **Separate Representations/indemnity caps** — new `LIM-CAP-REPS-ONLY` and
+  `LIM-CAP-INDEMNITY-ONLY`, splitting the existing combined-cap wording into
+  two tracks; must appear together (rule 12).
+- **Cap uplift for Buyer contributions** — wired in `LIM-CAP-UPLIFT`, which
+  already existed (`FROM AGREEMENT`, sourced from the real executed text)
+  but was never connected to the rule table.
+- **Escrow/retention security** — new `LIM-SECURITY-ESCROW`, a pointer
+  clause to a separate Escrow Agreement rather than drafting escrow
+  mechanics inline.
+- **W&I insurance** — new `LIM-CAP-WI`, a nominal-cap clause replacing the
+  ordinary general cap (rule 14), standard market structure for W&I-backed
+  deals.
+- **Schedule-free deals (positions 2/3)** — new `LIM-SCOPE-NOSCHED` and
+  `LIM-TIME-NOSCHED` (Representations-only, no compensation-of-losses
+  track); reused the existing `-TITLE` cap wording (no property-losses
+  parenthesis) for schedule-free caps too, broadening their scope notes
+  accordingly (rule 13).
+- `reference/clauses.md` now has 32 clause variants (up from 25). Added
+  consistency rules 12-14. The "No match" table is reduced to a note: every
+  previously-listed exclusion now has a path; only genuinely novel,
+  unanticipated combinations still refuse.
+- Updated `SKILL.md` Steps 1-4 throughout: new Step-1 questions (schedule
+  exists?, cap structure, security, W&I, cap uplift, buyer-side
+  thresholds), updated Step 2/3 selection and assembly logic, updated Step
+  4's checklist for the three new consistency rules.
+- Updated `README.md`.
+- Rebuilt `contract-clause-builder.zip`.
+- **Not yet tested at all** — this is a large, untested expansion. A full
+  re-test (the long-overdue "final" wave) is now more necessary than ever
+  and should cover the new paths specifically, not just the original four
+  positions.
+
 ## 2026-11-13 (later)
 
 ### DOCX export layout fixed

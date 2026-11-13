@@ -62,12 +62,66 @@ clause, not a limitation regime that LIM-BUYER-SOPHISTICATED could attach to.
 
 Positions 3 and 4 additionally include LIM-MITIG-B.
 
+## Separate caps for Representations and compensation of losses — alternative
+
+Positions 2 and 3 only (position 4 has no compensation-of-losses track to
+separate from). By default a single aggregate cap covers both tracks
+(LIM-CAP-PRICE / LIM-CAP-PCT / LIM-CAP-FIXED). If the user explicitly wants
+two separate caps instead, use LIM-CAP-REPS-ONLY and LIM-CAP-INDEMNITY-ONLY
+together in place of the combined cap — never just one of them. See
+consistency rule 12.
+
+## Schedule-free deals — positions 2 and 3
+
+Positions 2 and 3 assume an indemnity schedule (a compensation-of-losses
+track under art. 406.1) exists, by default. If the user confirms this deal
+has none at all:
+
+- Position 2: use LIM-SCOPE-NOSCHED in place of LIM-SCOPE; omit LIM-NODOUBLE.
+- Position 3: use LIM-SCOPE-NOSCHED in place of LIM-SCOPE and
+  LIM-TIME-NOSCHED in place of LIM-TIME / LIM-TIME-SHARES; omit
+  LIM-NODOUBLE; the cap clause must not include the property-losses
+  parenthesis (word it as LIM-CAP-PCT-TITLE / LIM-CAP-FIXED-TITLE do).
+  Consistency rule 1 (indemnity schedule allocation) does not apply — there
+  is no schedule to allocate.
+
+This replaces the former flat refusal for this combination. See consistency
+rule 13.
+
+## Security for Claims — escrow or retention
+
+Optional, any position that produces a limitation section (2, 3, 4). If the
+deal is backed by an escrow or retention arrangement, add
+LIM-SECURITY-ESCROW alongside the cap clause(s) — it does not replace them.
+
+## W&I insurance
+
+Optional, seller-side positions (3 and 4) only. If the Buyer has taken out
+warranty and indemnity insurance, use LIM-CAP-WI in place of the ordinary
+general cap clause (it replaces, not supplements, the cap). See consistency
+rule 14.
+
+## Cap uplift for the Buyer's contributions — optional, seller-side positions only
+
+Positions 3 and 4 only. If the Buyer plans contributions to the Company
+before a Claim is resolved, add LIM-CAP-UPLIFT alongside the general cap
+clause.
+
+## Buyer-side thresholds — optional
+
+Position 2 has no thresholds by default. If the Buyer explicitly requests a
+de minimis and/or basket on a buyer-side draft anyway, include DEMIN and/or
+BASKET-EXCESS as for the seller-side positions.
+
 ## Specific caps — zero or more
 
 A separate cap may be attached to a named breach or indemnity circumstance in
 any position that produces a limitation section. Ask for each one: which breach,
 what cap, and whether it counts toward the general cap or sits outside it. In
-position 4, the ground must be a title matter and LIM-CAP-SPECIFIC-TITLE is used.
+position 4 (ground must be a title matter), or in a schedule-free position
+2/3 deal, use LIM-CAP-SPECIFIC-TITLE instead of LIM-CAP-SPECIFIC — its
+wording has no property-losses language to match the general cap it sits
+alongside.
 
 | Clause | Repeatable |
 |---|---|
@@ -123,7 +177,7 @@ to exactly one. Position 4 has no indemnity schedule.
 | LIM-CAP-PCT-TITLE | DEF-PRICE, DEF-CLAIM |
 | LIM-CAP-FIXED-TITLE | DEF-CLAIM |
 | LIM-CAP-SPECIFIC | a general cap clause |
-| LIM-CAP-SPECIFIC-TITLE | a position-4 general cap clause |
+| LIM-CAP-SPECIFIC-TITLE | a general cap clause with no property-losses language |
 | DEMIN | DEF-CLAIM |
 | BASKET-EXCESS | DEF-CLAIM, DEMIN |
 | LIM-NODOUBLE | DEF-SCHEDULE-LOSSES |
@@ -131,6 +185,12 @@ to exactly one. Position 4 has no indemnity schedule.
 | DISCL-DATAROOM | DEF-REPS, DEF-DATA-ROOM |
 | LIM-BUYER-SOPHISTICATED | DEF-REPS |
 | LIM-NONE | DEF-REPS, DEF-APPLICABLE-LAW |
+| LIM-SCOPE-NOSCHED | DEF-REPS, DEF-CLAIM |
+| LIM-TIME-NOSCHED | DEF-CLOSING-DATE, LIM-TPC-NOTICE |
+| LIM-CAP-REPS-ONLY | DEF-REPS, DEF-CLAIM |
+| LIM-CAP-INDEMNITY-ONLY | DEF-SCHEDULE-LOSSES |
+| LIM-SECURITY-ESCROW | DEF-PRICE |
+| LIM-CAP-WI | DEF-CLAIM |
 
 ## Consistency rules
 
@@ -167,19 +227,30 @@ to exactly one. Position 4 has no indemnity schedule.
 11. **Position 1 is LIM-NONE alone.** Position 1's output is exactly one
     clause, LIM-NONE. No cap, period, threshold, disclosure, mitigation,
     buyer-type or other limitation clause may appear alongside it.
+12. **Separate caps are both-or-neither.** LIM-CAP-REPS-ONLY and
+    LIM-CAP-INDEMNITY-ONLY must appear together or not at all. Never select
+    one without the other, and never combine either with the ordinary
+    combined cap (LIM-CAP-PRICE / LIM-CAP-PCT / LIM-CAP-FIXED).
+13. **Schedule-free deals.** If LIM-SCOPE-NOSCHED is selected,
+    LIM-NODOUBLE must not appear, and the cap clause must not include the
+    property-losses parenthesis. If LIM-TIME-NOSCHED is selected, do not
+    run the indemnity-schedule-allocation check (rule 1) — there is nothing
+    to allocate.
+14. **W&I replaces, not supplements.** LIM-CAP-WI may not appear alongside
+    any other general cap clause (LIM-CAP-PRICE / LIM-CAP-PCT /
+    LIM-CAP-FIXED / LIM-CAP-REPS-ONLY / LIM-CAP-INDEMNITY-ONLY). It may
+    still appear alongside LIM-CAP-SPECIFIC, LIM-CAP-UPLIFT and
+    LIM-SECURITY-ESCROW.
 
 ## No match
 
 If a combination of inputs does not appear above, state which combination is
 missing and stop. Do not select the nearest row.
 
-Deliberately not covered:
-
-| Combination | Why excluded |
-|---|---|
-| Buyer-side de minimis or basket | Thresholds are used on seller-side drafts only |
-| Separate caps for representations and for indemnity | A single aggregate cap covers both |
-| Escrow, retention or other security for claims | Separate clause family, out of scope |
-| Uplift of the cap for buyer contributions to the Company | Deal-specific, excluded from the set |
-| W&I insurance structures | Not used |
-| Buyer-professional or standard seller deals with no indemnity schedule | LIM-SCOPE and LIM-TIME both assume one exists; Position 4 is schedule-free |
+As of 2026-11-13, every combination previously listed here as deliberately
+unsupported now has a path (see the sections above): buyer-side thresholds,
+separate representations/indemnity caps, escrow/retention security, cap
+uplift for Buyer contributions, W&I-insured deals, and schedule-free
+deals for positions 2 and 3. This section now covers only genuinely novel
+combinations not anticipated by any rule above — name the missing
+combination and stop; still do not select the nearest row or guess.

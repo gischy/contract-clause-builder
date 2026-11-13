@@ -12,14 +12,20 @@ allocation, any specific caps), collected one question at a time rather than
 as a batch, the skill:
 
 1. Establishes which of four transaction "positions" applies.
-2. Selects the clause variants the rule table assigns to that position.
+2. Selects the clause variants the rule table assigns to that position,
+   including optional add-ons when relevant: separate Representations/
+   indemnity caps, schedule-free deals, escrow/retention security, W&I
+   insurance, cap uplift for the Buyer's contributions, and buyer-side
+   thresholds.
 3. Inserts the parameters.
-4. Runs eleven consistency checks before producing output.
-5. Refuses to improvise and stops if the input combination isn't covered by
-   the approved rule set — the correct result in that case, not a failure.
-   (On a buyer-side draft against a non-professional seller, the correct
-   result is a single short clause, LIM-NONE, confirming liability is not
-   limited — not a full section, but not silence either.)
+4. Runs fourteen consistency checks before producing output.
+5. Refuses to improvise and stops only for genuinely novel combinations not
+   anticipated by any rule — every combination that used to be a flat
+   refusal (buyer-side thresholds, separate caps, escrow, W&I, cap uplift,
+   schedule-free deals) now has a real clause path instead. (On a buyer-side
+   draft against a non-professional seller, the correct result is a single
+   short clause, LIM-NONE, confirming liability is not limited — not a full
+   section, but not silence either.)
 6. Optionally exports the result as a Word (.docx), PDF or PowerPoint (.pptx)
    file, on a minimalistic HHL-branded template (yellow accent, logo,
    Verdana).
@@ -28,12 +34,12 @@ as a batch, the skill:
 
 - `SKILL.md` — the skill definition: the workflow Claude follows (collect
   inputs, select clauses, assemble, check).
-- `reference/clauses.md` — the clause library: 25 variants, English wording
+- `reference/clauses.md` — the clause library: 32 variants, English wording
   (a rendering of the firm's Russian-law originals; the whole set was
   confirmed approved by the firm on 2026-11-12).
 - `reference/rules.md` — the rule table: the four positions, clause
   selection and dependencies, parameter defaults, consistency rules, and the
-  combinations deliberately left unsupported.
+  (now very short) list of combinations still genuinely unsupported.
 - `scripts/export.py` — converts the assembled section to `.docx`, `.pdf` or
   `.pptx`, on a minimalistic HHL-branded template (PDF requires LibreOffice/
   `soffice` on PATH; falls back to a clear error, not a crash, if it isn't

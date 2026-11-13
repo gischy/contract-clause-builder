@@ -80,6 +80,24 @@ Requires: DEF-REPS, DEF-CLAIM, DEF-SALE-SHARES
 
 ---
 
+## LIM-SCOPE-NOSCHED — Scope, no indemnity schedule
+
+**APPROVED** (confirmed 2026-11-12). Positions 2 and 3 only, where the user
+confirms this deal has no indemnity schedule (no compensation-of-losses
+track under art. 406.1 at all). Replaces LIM-SCOPE. See consistency rule 13.
+Requires: DEF-REPS, DEF-CLAIM
+
+> The provisions of this clause [N] (Limitation of Liability), together with the
+> other provisions of this Agreement limiting liability, limit the Seller's
+> liability under or in connection with this Agreement in respect of any claim by
+> the Buyer against the Seller arising from the inaccuracy of the Seller's
+> Representations (a "Claim"), and establish the procedure for bringing and
+> satisfying Claims. This Agreement contains no schedule of circumstances
+> giving rise to compensation of losses under article 406.1 of the Civil
+> Code, and this clause [N] does not extend to any such compensation.
+
+---
+
 ## LIM-TIME — Claim periods, three tiers
 
 **FROM AGREEMENT** (cl. 10.2). Position 3 where title claims extend to other
@@ -154,6 +172,34 @@ Requires: DEF-CLOSING-DATE, LIM-TPC-NOTICE, DEF-SALE-SHARES
 > Claim, if the relevant Claim is received by the Seller in respect of Claims
 > relating to title to the Sale Shares — after the expiry of [TITLE PERIOD] from
 > the Closing Date.
+
+---
+
+## LIM-TIME-NOSCHED — Claim periods, three tiers, no indemnity schedule
+
+**APPROVED** (confirmed 2026-11-12). Position 3 only, paired with
+LIM-SCOPE-NOSCHED where the user confirms this deal has no indemnity
+schedule. Replaces LIM-TIME / LIM-TIME-SHARES. Tiers categorize
+Representations by subject matter, not schedule paragraphs — no paragraph
+allocation is required or possible here; consistency rule 1 does not apply.
+Requires: DEF-CLOSING-DATE, LIM-TPC-NOTICE
+
+> Upon expiry of the periods specified in this clause [N] below (subject to any
+> extension under clause [LIM-TPC-NOTICE]), the Buyer shall not be entitled to
+> bring any Claim against the Seller (and undertakes to refrain from bringing any
+> Claim against the Seller), and the Seller shall not be obliged to satisfy any
+> Claim, if the relevant Claim is received by the Seller:
+>
+> (a) in respect of Claims relating to the inaccuracy of the Seller's
+> Representations concerning tax matters — after the expiry of [TAX PERIOD]
+> from the Closing Date;
+>
+> (b) in respect of Claims relating to the inaccuracy of the Seller's
+> Representations concerning title to the Sale Shares [and/or title to OTHER
+> ASSETS] — after the expiry of [TITLE PERIOD] from the Closing Date;
+>
+> (c) in respect of Claims relating to the inaccuracy of any other Seller's
+> Representations — after the expiry of [OTHER PERIOD] from the Closing Date.
 
 ---
 
@@ -282,9 +328,39 @@ Requires: DEF-CLAIM
 
 ---
 
-## LIM-CAP-PCT-TITLE — Aggregate title-claim cap as a percentage of the price
+## LIM-CAP-REPS-ONLY — Separate cap, Representations track only
 
-**APPROVED** (confirmed 2026-11-12). Position 4 only.
+**APPROVED** (confirmed 2026-11-12). Positions 2 and 3 only, as an
+alternative to the single combined cap (LIM-CAP-PRICE / LIM-CAP-PCT /
+LIM-CAP-FIXED) where the user explicitly wants two separate caps instead of
+one. Always paired with LIM-CAP-INDEMNITY-ONLY — never used alone. See
+consistency rule 12.
+Requires: DEF-REPS, DEF-CLAIM
+
+> The Seller's aggregate liability to the Buyer under this Agreement in respect
+> of Claims arising from the inaccuracy of the Seller's Representations shall
+> not in any event exceed [AMOUNT OR PERCENTAGE].
+
+---
+
+## LIM-CAP-INDEMNITY-ONLY — Separate cap, compensation-of-losses track only
+
+**APPROVED** (confirmed 2026-11-12). Positions 2 and 3 only, paired with
+LIM-CAP-REPS-ONLY — never used alone. See consistency rule 12.
+Requires: DEF-SCHEDULE-LOSSES
+
+> The Seller's aggregate liability to the Buyer under this Agreement in respect
+> of compensation of losses under this Agreement (including, for the avoidance
+> of doubt, property losses compensated by the Seller to the Buyer) shall not
+> in any event exceed [AMOUNT OR PERCENTAGE].
+
+---
+
+## LIM-CAP-PCT-TITLE — Aggregate cap as a percentage of the price, no property-losses language
+
+**APPROVED** (confirmed 2026-11-12). Position 4, or a schedule-free position
+2/3 deal (see consistency rule 13) — any case with no compensation-of-losses
+track to extend the cap to.
 Requires: DEF-PRICE, DEF-CLAIM
 
 > The Seller's aggregate liability to the Buyer under this Agreement in respect
@@ -293,9 +369,11 @@ Requires: DEF-PRICE, DEF-CLAIM
 
 ---
 
-## LIM-CAP-FIXED-TITLE — Aggregate title-claim cap as a fixed sum
+## LIM-CAP-FIXED-TITLE — Aggregate cap as a fixed sum, no property-losses language
 
-**APPROVED** (confirmed 2026-11-12). Position 4 only.
+**APPROVED** (confirmed 2026-11-12). Position 4, or a schedule-free position
+2/3 deal (see consistency rule 13) — any case with no compensation-of-losses
+track to extend the cap to.
 Requires: DEF-CLAIM
 
 > The Seller's aggregate liability to the Buyer under this Agreement in respect
@@ -320,11 +398,13 @@ cap. Checked by consistency rule 5.
 
 ---
 
-## LIM-CAP-SPECIFIC-TITLE — Separate cap for a title matter
+## LIM-CAP-SPECIFIC-TITLE — Separate cap, no property-losses language
 
-**APPROVED** (confirmed 2026-11-12). Position 4 only. Repeatable: zero or
-more instances.
-Requires: a position-4 general cap clause
+**APPROVED** (confirmed 2026-11-12). Position 4 (ground must be a title
+matter), or a specific cap in a schedule-free position 2/3 deal (see
+consistency rule 13) — any case with no compensation-of-losses track to
+extend the cap to. Repeatable: zero or more instances.
+Requires: a general cap clause with no property-losses language
 
 > The Seller's aggregate liability to the Buyer in respect of Claims arising from
 > [GROUND] shall not in any event exceed [AMOUNT OR PERCENTAGE]. This limit
@@ -338,7 +418,9 @@ general cap. Checked by consistency rule 5.
 
 ## LIM-CAP-UPLIFT — Cap increased by the buyer's contributions
 
-**FROM AGREEMENT** (cl. 10.7). Deal-specific; currently excluded from the set.
+**FROM AGREEMENT** (cl. 10.7). Optional, seller-side positions (3 and 4)
+only; ask whether the Buyer plans contributions to the Company before a
+Claim is resolved.
 Requires: a general cap clause, DEF-COMPANY
 
 > If the Buyer makes contributions to the property of the Company and/or to the
@@ -353,10 +435,48 @@ Requires: a general cap clause, DEF-COMPANY
 
 ---
 
+## LIM-SECURITY-ESCROW — Security for Claims by escrow or retention
+
+**APPROVED** (confirmed 2026-11-12) — new, market practice. Optional, any
+position that produces a limitation section (2, 3, 4), where the deal is
+backed by an escrow or retention arrangement. Added alongside the cap, not
+instead of it. This clause is a pointer only: the escrow mechanics
+(release conditions, escrow agent duties, timing) belong in a separate
+Escrow Agreement, not in this section.
+Requires: DEF-PRICE
+
+> The Seller's obligations in respect of Claims under this clause [N] are
+> additionally secured in accordance with the escrow arrangements set out in
+> the Escrow Agreement dated [ESCROW AGREEMENT DATE] between the Parties and
+> [ESCROW AGENT], under which [ESCROW AMOUNT] of the Purchase Price is withheld
+> at Closing and released in accordance with its terms. This clause does not
+> itself state the escrow mechanics, which are governed exclusively by the
+> Escrow Agreement.
+
+---
+
+## LIM-CAP-WI — Cap where the deal is W&I-insured
+
+**APPROVED** (confirmed 2026-11-12) — new, market practice. Optional,
+seller-side positions (3 and 4) only, where the Buyer has taken out
+warranty and indemnity insurance. Replaces the ordinary general cap clause
+(it does not sit alongside it) — see consistency rule 14.
+Requires: DEF-CLAIM
+
+> The Transaction is supported by a warranty and indemnity insurance policy
+> taken out by the Buyer (the "W&I Policy"). Save in case of fraud by the
+> Seller, the Seller's aggregate liability to the Buyer under this Agreement in
+> respect of all Claims in aggregate shall not in any event exceed [NOMINAL
+> AMOUNT], and the Buyer's sole recourse for any Claim in excess of that amount
+> shall be under the W&I Policy.
+
+---
+
 ## DEMIN — De minimis, individual claim threshold
 
 **APPROVED** (confirmed 2026-11-12) — threshold derived from market data.
-Positions 3 and 4.
+Positions 3 and 4 by default; also position 2 if the Buyer explicitly
+requests a threshold on a buyer-side draft.
 Requires: DEF-CLAIM
 
 > The Seller shall not be liable in respect of any individual Claim unless the
@@ -370,7 +490,8 @@ Requires: DEF-CLAIM
 ## BASKET-EXCESS — Aggregate threshold, recovery above the threshold only
 
 **APPROVED** (confirmed 2026-11-12) — threshold derived from market data.
-Positions 3 and 4.
+Positions 3 and 4 by default; also position 2 if the Buyer explicitly
+requests a threshold on a buyer-side draft.
 Requires: DEF-CLAIM, DEMIN
 
 > The Seller shall not be liable in respect of any Claims until the aggregate

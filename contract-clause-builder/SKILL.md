@@ -45,37 +45,58 @@ The inputs, in the order to ask them:
    institutional holder) or not?
 3. **Warranty scope** — seller side only; full warranty package, or title
    warranties only?
-4. **Disclosure date** — the date by which information must have been made
+4. **Indemnity schedule exists?** — positions 2 and 3 only (position 4 is
+   always schedule-free; position 1 doesn't reach this question). Does this
+   deal have an indemnity schedule — a compensation-of-losses track under
+   art. 406.1 — at all? If not, use the schedule-free variants throughout.
+5. **Disclosure date** — the date by which information must have been made
    available in the Data Room for it to qualify as disclosed
-5. **Cap** — seller side only; a percentage of the price, or a fixed sum, and
-   the figure
-6. **Claim periods** — where they differ from the defaults
-7. **Other title assets** — seller, standard position only; identify assets
-   other than the Sale Shares to which the title-claim period must apply, or
-   confirm that there are none
-8. **Indemnity schedule** — buyer-professional and standard seller positions
-   only. A schedule is required: for the buyer-professional position, confirm
-   that it exists; for the standard seller position, identify every paragraph
-   and allocate it to the tax, title or other tier. The narrow seller position
-   has no indemnity schedule.
-9. **Specific caps** — for every position that produces a section, any named
-   breach or circumstance with its own cap; for
-   each, the breach, the amount, and whether it counts toward the general cap
-10. **Purchase Price** — only if needed to compare a specific cap that counts
+6. **Cap structure** — positions 2 and 3 only; one combined cap (the
+   default), or two separate caps (one for Representations, one for
+   compensation of losses)?
+7. **Cap** — seller side only, or position 2 if a W&I policy applies; the
+   figure(s): a percentage of the price, a fixed sum, or both if separate
+   caps were chosen
+8. **Claim periods** — where they differ from the defaults
+9. **Other title assets** — seller, standard position only, with a
+   schedule; identify assets other than the Sale Shares to which the
+   title-claim period must apply, or confirm that there are none
+10. **Indemnity schedule allocation** — buyer-professional and standard
+    seller positions only, where a schedule exists. For the
+    buyer-professional position, confirm the schedule exists; for the
+    standard seller position, identify every paragraph and allocate it to
+    the tax, title or other tier.
+11. **Specific caps** — for every position that produces a section, any named
+    breach or circumstance with its own cap; for
+    each, the breach, the amount, and whether it counts toward the general cap
+12. **Purchase Price** — only if needed to compare a specific cap that counts
     toward the general cap where one cap is a fixed amount and the other is a
     percentage of the Purchase Price
-11. **Buyer type** — for every position that produces a section, regardless of
+13. **Buyer type** — for every position that produces a section, regardless of
     which side is acting; is the Buyer a professional/institutional party (a
     fund, a strategic acquirer, an institutional investor) or an individual/
     private buyer? This is independent of the Position table and does not
     change which position applies; it only decides whether
     LIM-BUYER-SOPHISTICATED is included. Not asked on position 1 drafts: they
     produce only the confirmatory LIM-NONE clause, not a limitation regime.
+14. **Security** — for every position that produces a section; is the deal
+    backed by an escrow or retention arrangement? If so, which agreement,
+    agent and amount.
+15. **W&I insurance** — seller-side positions only; has the Buyer taken out
+    warranty and indemnity insurance? If so, this replaces the ordinary cap
+    with LIM-CAP-WI and the nominal amount agreed.
+16. **Cap uplift** — seller-side positions only; does the Buyer plan
+    contributions to the Company before a Claim is resolved?
+17. **Buyer-side thresholds** — position 2 only; does the Buyer want a de
+    minimis and/or basket included anyway, despite this being a buyer-side
+    draft?
 
-Do not ask about thresholds on a buyer-side draft, the third party claim notice
-period, the conditional claim period, or which of the mitigation, lost profit
-and disclosure clauses to include. Those follow from the position or are fixed,
-and are set by `reference/rules.md`.
+Do not ask about the third party claim notice period, the conditional claim
+period, or which of the mitigation, lost profit and disclosure clauses to
+include. Those follow from the position or are fixed, and are set by
+`reference/rules.md`. Thresholds on a buyer-side draft are the one exception
+to "ask only what the position requires" — offer them once, briefly, as
+input 17; do not ask repeatedly or assume the answer either way.
 
 Ask for the disclosure date for every position that produces a limitation
 section — but if it is not yet known (commonly the case: it is often still
@@ -90,8 +111,14 @@ the claim-period variant. If there are none, select the no-other-title-assets
 variant; never insert “none” into a clause placeholder. Do not ask this question
 for the narrow seller position: its scope is limited to the Sale Shares.
 
-Do not continue if the required indemnity schedule or its complete allocation
-has not been supplied. Position 4 has no indemnity schedule.
+For positions 2 and 3, ask first whether an indemnity schedule exists at
+all. If the user confirms it does not, use the schedule-free variants
+(LIM-SCOPE-NOSCHED, and for position 3 also LIM-TIME-NOSCHED) rather than
+refusing — this used to be a hard stop and no longer is. If the user
+confirms a schedule does exist, do not continue until its complete
+paragraph allocation has been supplied (position 3) or its existence has
+been confirmed (position 2). Position 4 is always schedule-free; this
+question does not arise for it.
 
 Do not continue if a specific cap that counts toward the general cap cannot be
 compared with it because one is expressed as a percentage and the other as a
@@ -115,8 +142,12 @@ seller's liability on a buyer-side draft — and stop before asking any of the
 other inputs. That is the correct output, not a failure.
 
 Otherwise start from the "Always included" list, then take what the selection
-table gives for the position (including the applicable claim-period variant),
-then add any specific caps asked for.
+table gives for the position (including the applicable claim-period and
+scope variant — ordinary or schedule-free), then layer in whichever optional
+items were asked for and apply: specific caps, separate
+representations/indemnity caps in place of the combined cap, escrow/retention
+security, W&I insurance in place of the ordinary cap, cap uplift, and
+buyer-side thresholds.
 
 Do not choose between variants on judgment. The table decides.
 
@@ -137,14 +168,17 @@ this order:
 1. Scope
 2. Periods for bringing claims — claim periods, third party claim notice,
    conduct of third party claims, conditional claims
-3. Maximum aggregate liability of the Seller — general cap, then any specific
-   caps
-4. Thresholds — de minimis and basket, seller side only
+3. Maximum aggregate liability of the Seller — the general cap (combined,
+   separate, or the W&I cap in place of it), then any specific caps, then
+   the cap uplift if requested
+4. Thresholds — de minimis and basket; seller side by default, buyer side
+   only if requested
 5. Disclosure through the data room
-6. No double recovery — positions 2 and 3 only
-7. Mitigation
-8. Exclusion of lost profit
-9. Buyer's acknowledgment of reliance — professional/institutional Buyer only
+6. No double recovery — positions 2 and 3 only, with an indemnity schedule
+7. Security for Claims — escrow or retention, only if requested
+8. Mitigation
+9. Exclusion of lost profit
+10. Buyer's acknowledgment of reliance — professional/institutional Buyer only
 
 Insert the figures and periods from the rule table. Resolve every internal
 cross-reference to the paragraph number it actually carries in the output.
@@ -161,12 +195,20 @@ Then:
 - Does every internal cross-reference resolve?
 - Do the figures and periods match the rule table exactly?
 - Are any defaults flagged as defaults?
-- In positions 2 and 3, does the cap clause retain the parenthesis covering
-  property losses? In position 4, is that language absent? (consistency rule 2)
+- In positions 2 and 3 with a schedule, does the cap clause retain the
+  parenthesis covering property losses? In position 4, or a schedule-free
+  position 2/3 deal, is that language absent? (consistency rules 2, 13)
 - Where a specific cap counts toward the general cap, has it been compared in
   the same unit of account?
 - Is LIM-BUYER-SOPHISTICATED included if and only if the Buyer is
   professional/institutional? (consistency rule 10)
+- If separate caps were chosen, do both LIM-CAP-REPS-ONLY and
+  LIM-CAP-INDEMNITY-ONLY appear, with no combined cap alongside them?
+  (consistency rule 12)
+- If LIM-CAP-WI is included, is it the only general cap clause present —
+  no LIM-CAP-PRICE/PCT/FIXED alongside it? (consistency rule 14)
+- If a schedule-free scope/period clause was used, was the
+  indemnity-schedule-allocation check correctly skipped? (consistency rule 13)
 
 End the output in English with:
 
