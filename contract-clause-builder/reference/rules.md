@@ -78,6 +78,10 @@ track under art. 406.1) exists, by default. If the user confirms this deal
 has none at all:
 
 - Position 2: use LIM-SCOPE-NOSCHED in place of LIM-SCOPE; omit LIM-NODOUBLE.
+  The cap must also not include the property-losses parenthesis — it has
+  nothing to attach to without a schedule. Use LIM-CAP-PCT-TITLE worded at
+  100% of the Purchase Price (the Position 2 cap figure) in place of
+  LIM-CAP-PRICE, since LIM-CAP-PRICE's wording is fixed to that parenthesis.
 - Position 3: use LIM-SCOPE-NOSCHED in place of LIM-SCOPE and
   LIM-TIME-NOSCHED in place of LIM-TIME / LIM-TIME-SHARES; omit
   LIM-NODOUBLE; the cap clause must not include the property-losses
